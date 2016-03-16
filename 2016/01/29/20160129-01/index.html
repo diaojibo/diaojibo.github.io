@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -57,15 +57,19 @@
 
 
 
-<meta name="description" content="世上有【做得到】与【做不到】的区别，但是也有【做】与【不做】之分">
-<meta property="og:type" content="website">
-<meta property="og:title" content="韬光养晦">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
+内存分配策">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中的堆内存和栈内存">
+<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="世上有【做得到】与【做不到】的区别，但是也有【做】与【不做】之分">
+<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
+内存分配策">
+<meta property="og:updated_time" content="2016-03-16T13:07:29.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="韬光养晦">
-<meta name="twitter:description" content="世上有【做得到】与【做不到】的区别，但是也有【做】与【不做】之分">
+<meta name="twitter:title" content="java中的堆内存和栈内存">
+<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
+内存分配策">
 
 
 
@@ -97,7 +101,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> 韬光养晦 </title>
+  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -118,9 +122,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +219,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -239,111 +241,7 @@
             
             
               
-                
-                <a class="post-title-link md_title_color" href="/2016/03/14/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T16:36:03+08:00" content="2016-03-14">
-              2016-03-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/14/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/14/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal  md_title little_top" itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link md_title_color" href="/2016/01/29/20160129-01/" itemprop="url">
-                  java中的堆内存和栈内存
-                </a>
+                java中的堆内存和栈内存
               
             
           </h1>
@@ -408,284 +306,61 @@
       
 
       
-        
-          
-          java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而
-          ...
+        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
+<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><p>###1.静态存储分配<br>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
+<p>###2.栈式存储分配<br>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
+<p>###3.堆式存储分配<br>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
+<hr>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/29/20160129-01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal  md_title little_top" itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link md_title_color" href="/2016/01/25/20160125-01/" itemprop="url">
-                  个人idea快捷键整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T18:37:19+08:00" content="2016-01-25">
-              2016-01-25
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/java/" rel="tag">#java</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/25/20160125-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/25/20160125-01/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          IntelliJ Idea常用快捷键整理一下常用快捷键
-Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl+Alt+L  格式化代码Ctrl+Alt+O 优化导入的类和包Alt+Insert 生成代码(如get,set方法,构造函数等)Ctrl+E或者A
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/25/20160125-01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
+                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal  md_title little_top" itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/03/14/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link md_title_color" href="/2015/12/26/20151226-01/" itemprop="url">
-                  genymotion windows兼容性问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-26T23:28:52+08:00" content="2015-12-26">
-              2015-12-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/26/20151226-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/20151226-01/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-貌似在这个ghost系统下，经过我的测试只有4.3.1.2可以完美运行virtualbox 
-
-          
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/26/20151226-01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -693,6 +368,14 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
+           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -712,8 +395,17 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/profile.jpg"
@@ -783,6 +475,23 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -867,6 +576,167 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
   
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
