@@ -57,19 +57,28 @@
 
 
 
-<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="description" content="java注解的基本定义根据维基百科
+
+Java注解又称Java标注，是Java语言5.0版本开始支持加入源代码的特殊语法元数据。Java语言中的类、方法、变量、参数和包等都可以被标注。Java标注和Javadoc不同，标注有自反性。在编译器生成类文件时，标注可以被嵌入到字节码中，由Java虚拟机执行时获取到标注。
+
+总之注解就是用于一种标记，在程序中加了注解就等于为程序打上了某种标记。程序可以利用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的堆内存和栈内存">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
+<meta property="og:title" content="java中的注解">
+<meta property="og:url" content="http://yoursite.com/2016/02/05/20160205-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
-<meta property="og:updated_time" content="2016-03-16T13:10:53.678Z">
+<meta property="og:description" content="java注解的基本定义根据维基百科
+
+Java注解又称Java标注，是Java语言5.0版本开始支持加入源代码的特殊语法元数据。Java语言中的类、方法、变量、参数和包等都可以被标注。Java标注和Javadoc不同，标注有自反性。在编译器生成类文件时，标注可以被嵌入到字节码中，由Java虚拟机执行时获取到标注。
+
+总之注解就是用于一种标记，在程序中加了注解就等于为程序打上了某种标记。程序可以利用">
+<meta property="og:updated_time" content="2016-03-18T04:31:56.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的堆内存和栈内存">
-<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="twitter:title" content="java中的注解">
+<meta name="twitter:description" content="java注解的基本定义根据维基百科
+
+Java注解又称Java标注，是Java语言5.0版本开始支持加入源代码的特殊语法元数据。Java语言中的类、方法、变量、参数和包等都可以被标注。Java标注和Javadoc不同，标注有自反性。在编译器生成类文件时，标注可以被嵌入到字节码中，由Java虚拟机执行时获取到标注。
+
+总之注解就是用于一种标记，在程序中加了注解就等于为程序打上了某种标记。程序可以利用">
 
 
 
@@ -101,7 +110,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
+  <title> java中的注解 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +250,7 @@
             
             
               
-                java中的堆内存和栈内存
+                java中的注解
               
             
           </h1>
@@ -253,8 +262,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T20:29:06+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-02-05T23:12:38+08:00" content="2016-02-05">
+              2016-02-05
             </time>
           </span>
 
@@ -283,8 +292,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/29/20160129-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/20160129-01/" itemprop="commentsCount"></span>
+                <a href="/2016/02/05/20160205-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/05/20160205-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,11 +315,18 @@
       
 
       
-        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
-<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><h3 id="1-静态存储分配"><a href="#1-静态存储分配" class="headerlink" title="1.静态存储分配"></a>1.静态存储分配</h3><p>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
-<h3 id="2-栈式存储分配"><a href="#2-栈式存储分配" class="headerlink" title="2.栈式存储分配"></a>2.栈式存储分配</h3><p>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
-<h3 id="3-堆式存储分配"><a href="#3-堆式存储分配" class="headerlink" title="3.堆式存储分配"></a>3.堆式存储分配</h3><p>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
-<hr>
+        <h1 id="java注解的基本定义"><a href="#java注解的基本定义" class="headerlink" title="java注解的基本定义"></a>java注解的基本定义</h1><p>根据维基百科</p>
+<blockquote>
+<p>Java注解又称Java标注，是Java语言5.0版本开始支持加入源代码的特殊语法元数据。<br>Java语言中的类、方法、变量、参数和包等都可以被标注。Java标注和Javadoc不同，标注有自反性。在编译器生成类文件时，标注可以被嵌入到字节码中，由Java虚拟机执行时获取到标注。</p>
+</blockquote>
+<p>总之注解就是用于一种标记，在程序中加了注解就等于为程序打上了某种标记。程序可以利用java的反射机制来了解你的类及各种元素上有无何种标记，针对不同的标记，就去做相应的事件。标记可以加在包，类，字段，方法，方法的参数以及局部变量上。</p>
+<pre><code class="java"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
+    <span class="keyword">super</span>.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.mytoolbar);
+    setSupportActionBar(toolbar);
+}
+</code></pre>
 
       
     </div>
@@ -334,16 +350,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
-                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              <a href="/2016/01/29/20160129-01/" rel="next" title="java中的堆内存和栈内存">
+                <i class="fa fa-chevron-left"></i> java中的堆内存和栈内存
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/05/20160205-01/" rel="prev" title="java中的注解">
-                java中的注解 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/14/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -370,8 +386,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
-           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      <div class="ds-thread" data-thread-key="2016/02/05/20160205-01/"
+           data-title="java中的注解" data-url="http://yoursite.com/2016/02/05/20160205-01/">
       </div>
     
   </div>
@@ -485,7 +501,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态存储分配"><span class="nav-number">1.1.</span> <span class="nav-text">1.静态存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-栈式存储分配"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-堆式存储分配"><span class="nav-number">1.3.</span> <span class="nav-text">3.堆式存储分配</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java注解的基本定义"><span class="nav-number">1.</span> <span class="nav-text">java注解的基本定义</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
