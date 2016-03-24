@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -57,40 +57,19 @@
 
 
 
-<meta name="description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
+<meta name="description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
+现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android中的dp与sp">
-<meta property="og:url" content="http://yoursite.com/2016/02/07/20160207-01/index.html">
+<meta property="og:title" content="java泛型的一些理解与笔记">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
-<meta property="og:updated_time" content="2016-03-19T14:22:53.704Z">
+<meta property="og:description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
+现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
+<meta property="og:updated_time" content="2016-03-24T10:27:53.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中的dp与sp">
-<meta name="twitter:description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
+<meta name="twitter:title" content="java泛型的一些理解与笔记">
+<meta name="twitter:description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
+现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
 
 
 
@@ -122,7 +101,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> Android中的dp与sp | 韬光养晦 </title>
+  <title> java泛型的一些理解与笔记 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +241,7 @@
             
             
               
-                Android中的dp与sp
+                java泛型的一些理解与笔记
               
             
           </h1>
@@ -274,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-07T17:12:13+08:00" content="2016-02-07">
-              2016-02-07
+            <time itemprop="dateCreated" datetime="2016-03-24T18:15:09+08:00" content="2016-03-24">
+              2016-03-24
             </time>
           </span>
 
@@ -288,8 +267,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -304,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/07/20160207-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/07/20160207-01/" itemprop="commentsCount"></span>
+                <a href="/2016/03/24/20160324-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,22 +306,8 @@
       
 
       
-        <h3 id="dp"><a href="#dp" class="headerlink" title="dp"></a>dp</h3><p>我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式</p>
-<blockquote>
-<p>像素密度 = 分辨率 / 实际长度(英寸为单位)</p>
-</blockquote>
-<p>好比 1.5<em>2 英寸的屏幕是 240\</em>320 的，则她的像素密度是</p>
-<blockquote>
-<p>240 / 1.5 = 160 dpi(dots per Inch)</p>
-</blockquote>
-<p>所以不同的手机，里面显示的物体如果根据固定像素现实的话实际长度也可能是不同的，因为像素密度的不同，固定像素 * 像素密度 得到的实际长度当然不一样。而dp就是为了解决这个问题，在像素密度不同的手机设备中，dp会根据不同的系数因子转化。</p>
-<blockquote>
-<p>Android系统定义了四种像素密度：低（120dpi）、中（160dpi）、高（240dpi）和超高（320dpi），它们对应的dp到px的系数分别为0.75、1、1.5和2，这个系数乘以dp长度就是像素数。</p>
-</blockquote>
-<h3 id="sp"><a href="#sp" class="headerlink" title="sp"></a>sp</h3><blockquote>
-<p>与缩放无关的抽象像素（Scale-independent Pixel）。sp和dp很类似但唯一的区别是，Android系统允许用户自定义文字尺寸大小（小、正常、大、超大等等），当文字尺寸是“正常”时1sp=1dp=0.00625英寸，而当文字尺寸是“大”或“超大”时，1sp&gt;1dp=0.00625英寸。类似我们在windows里调整字体尺寸以后的效果——窗口大小不变，只有文字大小改变。</p>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>反正就是文字尺寸用sp，非文字尺寸用dp。就是如此</p>
+        <p>都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。</p>
+<p>现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用与作存储位置，而对应的value存在那个地方即可。这就是hashMap的简单原理。</p>
 
       
     </div>
@@ -357,7 +322,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/java/" rel="tag">#java</a>
           
         </div>
       
@@ -366,17 +331,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/05/20160205-01/" rel="next" title="java中的注解">
-                <i class="fa fa-chevron-left"></i> java中的注解
+              <a href="/2016/03/23/20160323-01/" rel="next" title="Android studio解决gradle下载慢的问题">
+                <i class="fa fa-chevron-left"></i> Android studio解决gradle下载慢的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/20/project_learning/" rel="prev" title="安卓实战学习记录01">
-                安卓实战学习记录01 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,8 +363,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/07/20160207-01/"
-           data-title="Android中的dp与sp" data-url="http://yoursite.com/2016/02/07/20160207-01/">
+      <div class="ds-thread" data-thread-key="2016/03/24/20160324-01/"
+           data-title="java泛型的一些理解与笔记" data-url="http://yoursite.com/2016/03/24/20160324-01/">
       </div>
     
   </div>
@@ -517,7 +478,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#dp"><span class="nav-number">1.</span> <span class="nav-text">dp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sp"><span class="nav-number">2.</span> <span class="nav-text">sp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
