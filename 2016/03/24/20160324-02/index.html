@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="软件使用," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -57,21 +57,46 @@
 
 
 
-<meta name="description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
+<meta name="description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
+可达性java虚拟机中有五个级别的可达性。
+
+强可达
+
+强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
+
+软可达
+
+
+ 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android studio解决gradle下载慢的问题">
-<meta property="og:url" content="http://yoursite.com/2016/03/23/20160323-01/index.html">
+<meta property="og:title" content="java里的可达性和各种引用">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-02/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
-<meta property="og:image" content="http://yoursite.com/2016/03/23/20160323-01/example.jpg">
-<meta property="og:updated_time" content="2016-03-23T12:18:38.456Z">
+<meta property="og:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
+可达性java虚拟机中有五个级别的可达性。
+
+强可达
+
+强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
+
+软可达
+
+
+ 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
+<meta property="og:updated_time" content="2016-03-24T13:11:21.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android studio解决gradle下载慢的问题">
-<meta name="twitter:description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
-<meta name="twitter:image" content="http://yoursite.com/2016/03/23/20160323-01/example.jpg">
+<meta name="twitter:title" content="java里的可达性和各种引用">
+<meta name="twitter:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
+可达性java虚拟机中有五个级别的可达性。
+
+强可达
+
+强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
+
+软可达
+
+
+ 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
 
 
 
@@ -103,7 +128,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> Android studio解决gradle下载慢的问题 | 韬光养晦 </title>
+  <title> java里的可达性和各种引用 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +268,7 @@
             
             
               
-                Android studio解决gradle下载慢的问题
+                java里的可达性和各种引用
               
             
           </h1>
@@ -255,8 +280,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-23T20:10:12+08:00" content="2016-03-23">
-              2016-03-23
+            <time itemprop="dateCreated" datetime="2016-03-24T20:17:39+08:00" content="2016-03-24">
+              2016-03-24
             </time>
           </span>
 
@@ -269,8 +294,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -285,8 +310,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/23/20160323-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/23/20160323-01/" itemprop="commentsCount"></span>
+                <a href="/2016/03/24/20160324-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-02/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,9 +333,56 @@
       
 
       
-        <p>gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。</p>
-<p>那只需在Android studio中，setting 的 http proxy下。如图配置即可</p>
-<img src="/2016/03/23/20160323-01/example.jpg" alt="This is an example image" title="This is an example image">
+        <p>最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。</p>
+<h3 id="可达性"><a href="#可达性" class="headerlink" title="可达性"></a>可达性</h3><p>java虚拟机中有五个级别的可达性。</p>
+<ul>
+<li>强可达</li>
+</ul>
+<p>强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。</p>
+<ul>
+<li>软可达</li>
+</ul>
+<blockquote>
+<p> 如果一个对象没有强可达性，但是它可以通过一个软引用(soft reference.)来使用，那么它就具有软可达性。只有当系统需要更多内存时，GC才会回收具有软可达性的对象。在内存不足前，GC保证一定回收软可达的对象。</p>
+</blockquote>
+<p>就是说，软引用对象的回收去决定于不同版本JVM的回收机制，回收之后软引用会返回null。</p>
+<ul>
+<li>软可达</li>
+</ul>
+<blockquote>
+<p>如果一个对象既没有强可达性，也没有软可达性，但是它可以通过一个弱引用(weak reference)来使用，那么他就具有弱可达性。当弱引用指向的弱可达对象没有其他的引用，那么这个对象就会被回收。</p>
+</blockquote>
+<ul>
+<li>虚可达<blockquote>
+<p>如果一个对象既没有强可达性，也没有软可达性、弱可达性，他已经被终结（finalized），并且有一些虚引用（phantom reference）指向它，那么它就具有虚可达性。</p>
+</blockquote>
+</li>
+</ul>
+<p>就是说虚引用指向的对象已经被终结了，永远返回null。</p>
+<ul>
+<li>不可达<blockquote>
+<p>当一个对象不能通过以上的方式指向，那么这个对象就变得不可达，并因此适合被回收。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="引用的类型"><a href="#引用的类型" class="headerlink" title="引用的类型"></a>引用的类型</h3><p>JDK1.2之后，对象引用被分为四个级别。</p>
+<ul>
+<li>强引用</li>
+</ul>
+<p>垃圾回收器不回收强引用，如若内存空间不足，jvm将会OOM错误。</p>
+<ul>
+<li>软引用</li>
+</ul>
+<p>够空间就不回收，不够就回。可用于实现内存敏感的高速缓存</p>
+<ul>
+<li>弱引用</li>
+</ul>
+<p>对象若是有弱引用，那将具有更短的生命周期，一旦它被扫描到，不管内存空间是否充足都会被回收，不过由于垃圾回收器是个级别很低的线程，所以不一定会很快发现弱引用对象。</p>
+<ul>
+<li>虚引用</li>
+</ul>
+<p>形同虚设，并不决定对象生命周期，主要用来跟踪对象被GC回收的活动。</p>
+
       
     </div>
 
@@ -324,7 +396,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/软件使用/" rel="tag">#软件使用</a>
+            <a href="/tags/java/" rel="tag">#java</a>
           
         </div>
       
@@ -333,17 +405,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/20/project_learning/" rel="next" title="安卓实战学习记录01">
-                <i class="fa fa-chevron-left"></i> 安卓实战学习记录01
+              <a href="/2016/03/24/20160324-01/" rel="next" title="java泛型的一些理解与笔记">
+                <i class="fa fa-chevron-left"></i> java泛型的一些理解与笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/20160324-01/" rel="prev" title="java泛型的一些理解与笔记">
-                java泛型的一些理解与笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -369,8 +437,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/23/20160323-01/"
-           data-title="Android studio解决gradle下载慢的问题" data-url="http://yoursite.com/2016/03/23/20160323-01/">
+      <div class="ds-thread" data-thread-key="2016/03/24/20160324-02/"
+           data-title="java里的可达性和各种引用" data-url="http://yoursite.com/2016/03/24/20160324-02/">
       </div>
     
   </div>
@@ -484,7 +552,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#可达性"><span class="nav-number">1.</span> <span class="nav-text">可达性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用的类型"><span class="nav-number">2.</span> <span class="nav-text">引用的类型</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
