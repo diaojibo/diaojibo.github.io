@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -57,46 +57,22 @@
 
 
 
-<meta name="description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
-
-
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
+<meta name="description" content="当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。
+根据资料，以往我们可能会使用软引用技术去处理，不过现在我们不推荐使用那个了。现在谷歌有LruCache这个核心类并且已经加入到了v4包里面，这个类很适合用来缓存图片。
+这里还要来讲几个东西。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java里的可达性和各种引用">
-<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-02/index.html">
+<meta property="og:title" content="图片异步加载">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-03/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
-
-
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
-<meta property="og:updated_time" content="2016-03-24T13:11:21.864Z">
+<meta property="og:description" content="当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。
+根据资料，以往我们可能会使用软引用技术去处理，不过现在我们不推荐使用那个了。现在谷歌有LruCache这个核心类并且已经加入到了v4包里面，这个类很适合用来缓存图片。
+这里还要来讲几个东西。">
+<meta property="og:updated_time" content="2016-03-24T14:29:48.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java里的可达性和各种引用">
-<meta name="twitter:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
-
-
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
+<meta name="twitter:title" content="图片异步加载">
+<meta name="twitter:description" content="当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。
+根据资料，以往我们可能会使用软引用技术去处理，不过现在我们不推荐使用那个了。现在谷歌有LruCache这个核心类并且已经加入到了v4包里面，这个类很适合用来缓存图片。
+这里还要来讲几个东西。">
 
 
 
@@ -128,7 +104,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java里的可达性和各种引用 | 韬光养晦 </title>
+  <title> 图片异步加载 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +244,7 @@
             
             
               
-                java里的可达性和各种引用
+                图片异步加载
               
             
           </h1>
@@ -280,7 +256,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-24T20:17:39+08:00" content="2016-03-24">
+            <time itemprop="dateCreated" datetime="2016-03-24T21:22:51+08:00" content="2016-03-24">
               2016-03-24
             </time>
           </span>
@@ -294,8 +270,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -310,8 +286,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/24/20160324-02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-02/" itemprop="commentsCount"></span>
+                <a href="/2016/03/24/20160324-03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-03/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,55 +309,13 @@
       
 
       
-        <p>最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。</p>
-<h3 id="可达性"><a href="#可达性" class="headerlink" title="可达性"></a>可达性</h3><p>java虚拟机中有五个级别的可达性。</p>
-<ul>
-<li>强可达</li>
-</ul>
-<p>强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。</p>
-<ul>
-<li>软可达</li>
-</ul>
-<blockquote>
-<p> 如果一个对象没有强可达性，但是它可以通过一个软引用(soft reference.)来使用，那么它就具有软可达性。只有当系统需要更多内存时，GC才会回收具有软可达性的对象。在内存不足前，GC保证一定回收软可达的对象。</p>
-</blockquote>
-<p>就是说，软引用对象的回收去决定于不同版本JVM的回收机制，回收之后软引用会返回null。</p>
-<ul>
-<li>软可达</li>
-</ul>
-<blockquote>
-<p>如果一个对象既没有强可达性，也没有软可达性，但是它可以通过一个弱引用(weak reference)来使用，那么他就具有弱可达性。当弱引用指向的弱可达对象没有其他的引用，那么这个对象就会被回收。</p>
-</blockquote>
-<ul>
-<li>虚可达<blockquote>
-<p>如果一个对象既没有强可达性，也没有软可达性、弱可达性，他已经被终结（finalized），并且有一些虚引用（phantom reference）指向它，那么它就具有虚可达性。</p>
-</blockquote>
-</li>
-</ul>
-<p>就是说虚引用指向的对象已经被终结了，永远返回null。</p>
-<ul>
-<li>不可达<blockquote>
-<p>当一个对象不能通过以上的方式指向，那么这个对象就变得不可达，并因此适合被回收。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="引用的类型"><a href="#引用的类型" class="headerlink" title="引用的类型"></a>引用的类型</h3><p>JDK1.2之后，对象引用被分为四个级别。</p>
-<ul>
-<li>强引用</li>
-</ul>
-<p>垃圾回收器不回收强引用，如若内存空间不足，jvm将会OOM错误。</p>
-<ul>
-<li>软引用</li>
-</ul>
-<p>够空间就不回收，不够就回。可用于实现内存敏感的高速缓存</p>
-<ul>
-<li>弱引用</li>
-</ul>
-<p>对象若是有弱引用，那将具有更短的生命周期，一旦它被扫描到，不管内存空间是否充足都会被回收，不过由于垃圾回收器是个级别很低的线程，所以不一定会很快发现弱引用对象。</p>
-<ul>
-<li>虚引用</li>
-</ul>
-<p>形同虚设，并不决定对象生命周期，主要用来跟踪对象被GC回收的活动。</p>
+        <p>当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。</p>
+<p>根据资料，以往我们可能会使用软引用技术去处理，不过现在我们不推荐使用那个了。现在谷歌有LruCache这个核心类并且已经加入到了v4包里面，这个类很适合用来缓存图片。</p>
+<p>这里还要来讲几个东西。</p>
+<h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>继承了HashMap，但同时他也是个双向链表，具有可预知的迭代顺序。其数组中的保存元素Entry除了保存对象引用之外，还保存了上一个元素before和下一个元素after。其提取有两种顺序，一种是按照访问顺序提取，一种是按照插入顺序提取。很适合用于LRU缓存机制。</p>
+<h4 id="LRU缓存机制"><a href="#LRU缓存机制" class="headerlink" title="LRU缓存机制"></a>LRU缓存机制</h4><p>LRU是Least Recently Used 的缩写，翻译过来就是“最近最少使用”，也就是说，LRU缓存把最近最少使用的数据移除，让给最新读取的数据。而往往最常读取的，也是读取次数最多的，所以，利用LRU缓存，我们能够提高系统的performance.</p>
+<p>要实现LRU缓存，我们首先要用到一个类 LinkedHashMap。 用这个类有两大好处：一是它本身已经实现了按照访问顺序的存储，也就是说，最近读取的会放在最前面，最最不常读取的会放在最后（当然，它也可以实现按照插入顺序存储）。第二，LinkedHashMap本身有一个方法用于判断是否需要移除最不常读取的数</p>
+<p>未完待续。。。。</p>
 
       
     </div>
@@ -396,7 +330,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -405,17 +339,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/24/20160324-01/" rel="next" title="java泛型的一些理解与笔记">
-                <i class="fa fa-chevron-left"></i> java泛型的一些理解与笔记
+              <a href="/2016/03/24/20160324-02/" rel="next" title="java里的可达性和各种引用">
+                <i class="fa fa-chevron-left"></i> java里的可达性和各种引用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/20160324-03/" rel="prev" title="图片异步加载">
-                图片异步加载 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,8 +371,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/24/20160324-02/"
-           data-title="java里的可达性和各种引用" data-url="http://yoursite.com/2016/03/24/20160324-02/">
+      <div class="ds-thread" data-thread-key="2016/03/24/20160324-03/"
+           data-title="图片异步加载" data-url="http://yoursite.com/2016/03/24/20160324-03/">
       </div>
     
   </div>
@@ -556,7 +486,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#可达性"><span class="nav-number">1.</span> <span class="nav-text">可达性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用的类型"><span class="nav-number">2.</span> <span class="nav-text">引用的类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashMap"><span class="nav-number">1.</span> <span class="nav-text">LinkedHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LRU缓存机制"><span class="nav-number">2.</span> <span class="nav-text">LRU缓存机制</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
