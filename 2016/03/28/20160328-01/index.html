@@ -59,14 +59,14 @@
 
 <meta name="description" content="进程与线程进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java多进程回顾">
+<meta property="og:title" content="java一些多进程知识点回顾">
 <meta property="og:url" content="http://yoursite.com/2016/03/28/20160328-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
 <meta property="og:description" content="进程与线程进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。">
 <meta property="og:image" content="http://yoursite.com/2016/03/28/20160328-01/java-thread.jpg">
-<meta property="og:updated_time" content="2016-03-28T13:19:56.611Z">
+<meta property="og:updated_time" content="2016-03-28T14:28:59.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java多进程回顾">
+<meta name="twitter:title" content="java一些多进程知识点回顾">
 <meta name="twitter:description" content="进程与线程进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。">
 <meta name="twitter:image" content="http://yoursite.com/2016/03/28/20160328-01/java-thread.jpg">
 
@@ -100,7 +100,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java多进程回顾 | 韬光养晦 </title>
+  <title> java一些多进程知识点回顾 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +240,7 @@
             
             
               
-                java多进程回顾
+                java一些多进程知识点回顾
               
             
           </h1>
@@ -335,6 +335,20 @@
 </blockquote>
 </li>
 </ul>
+<h2 id="java线程同步"><a href="#java线程同步" class="headerlink" title="java线程同步"></a>java线程同步</h2><blockquote>
+<p>在某个Java对象上面调用wait方法的时候，首先要检查当前线程是否获取到了这个对象上的锁。如果没有的话，就会直接抛出java.lang.IllegalMonitorStateException异常。如果有锁的话，就把当前线程添加到对象的等待集合中，并释放其所拥有的锁。当前线程被阻塞，无法继续执行，直到被从对象的等待集合中移除。引起某个线程从对象的等待集合中移除的原因有很多：对象上的notify方法被调用时，该线程被选中；对象上的notifyAll方法被调用；线程被中断；对于有超时限制的wait操作，当超过时间限制时；JVM内部实现在非正常情况下的操作。</p>
+</blockquote>
+<h2 id="volatile的用法"><a href="#volatile的用法" class="headerlink" title="volatile的用法"></a>volatile的用法</h2><blockquote>
+<p>Java语言提供了一种稍弱的同步机制，即volatile变量，用来确保将变量的更新操作通知到其它线程。当把变量声明为volatile类型后，编译器与运行时都会注意到这个变量是共享的，因此不会将该变量上的操作与其它内存操作一起重排序。Volatile变量不会被缓存在寄存器或者其它对处理器不可见的地方，因此在读取volatile类型的变量时，总会返回最新写入的值。</p>
+</blockquote>
+<p>其实也就是说，用volatile修饰的变量是不稳定的，经常要变动的，,编译器为了加快程序运行的速度,对一些变量的写操作会先在寄存器或者是CPU缓存上进行,最后才写入内存，volatile关键字保证不会被各种缓存机制优化，所以每次都可以直接去内存当中去读取出它的值。但是要注意，这就不能保证原子性了，只是提供了内存可见性。</p>
+<h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><blockquote>
+<p>不管这个方法或者代码块被多少线程访问，方法和代码块中的语句只能作为一个整体执行，即当一个线程访问一个同步方法时，只有当方法执行完时，其他线程才能执行该方法。简单讲，就是一个线程一个线程来，而且必须全部执行完同步方法或代码块中的语句。</p>
+</blockquote>
+<h3 id="内存可见性"><a href="#内存可见性" class="headerlink" title="内存可见性"></a>内存可见性</h3><blockquote>
+<p>这指的是一个线程在同步方法或者代码块中对共享变量做的任何改变，对随后的其他线程都是可见的</p>
+</blockquote>
+<p>因此可见，我们在对一个变量内存可见性高的时候应该使用这个关键字，经常需要读取出最新的值从内存中。并且需要注意的是，这个关键字<strong>不能保证原子性（如++操作）</strong></p>
 
       
     </div>
@@ -391,7 +405,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/03/28/20160328-01/"
-           data-title="java多进程回顾" data-url="http://yoursite.com/2016/03/28/20160328-01/">
+           data-title="java一些多进程知识点回顾" data-url="http://yoursite.com/2016/03/28/20160328-01/">
       </div>
     
   </div>
@@ -505,7 +519,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程的生命周期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java线程同步"><span class="nav-number">3.</span> <span class="nav-text">java线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile的用法"><span class="nav-number">4.</span> <span class="nav-text">volatile的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原子性"><span class="nav-number">4.1.</span> <span class="nav-text">原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存可见性"><span class="nav-number">4.2.</span> <span class="nav-text">内存可见性</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
