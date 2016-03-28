@@ -67,7 +67,7 @@
 <meta property="og:description" content="当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。
 根据资料，以往我们可能会使用软引用技术去处理，不过现在我们不推荐使用那个了。现在谷歌有LruCache这个核心类并且已经加入到了v4包里面，这个类很适合用来缓存图片。
 这里还要来讲几个东西。">
-<meta property="og:updated_time" content="2016-03-24T14:29:48.827Z">
+<meta property="og:updated_time" content="2016-03-24T14:41:17.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片异步加载">
 <meta name="twitter:description" content="当我们安卓系统要去加载一大堆的图片的时候，情况会变得比较复杂，很容易出现OOM内存溢出。为了保证不发生这种情况，通常会进行垃圾回收，但是同时也要考虑重新滑回图片时的情况，所以基于此，必须使用好内存缓存技术。
@@ -315,7 +315,7 @@
 <h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>继承了HashMap，但同时他也是个双向链表，具有可预知的迭代顺序。其数组中的保存元素Entry除了保存对象引用之外，还保存了上一个元素before和下一个元素after。其提取有两种顺序，一种是按照访问顺序提取，一种是按照插入顺序提取。很适合用于LRU缓存机制。</p>
 <h4 id="LRU缓存机制"><a href="#LRU缓存机制" class="headerlink" title="LRU缓存机制"></a>LRU缓存机制</h4><p>LRU是Least Recently Used 的缩写，翻译过来就是“最近最少使用”，也就是说，LRU缓存把最近最少使用的数据移除，让给最新读取的数据。而往往最常读取的，也是读取次数最多的，所以，利用LRU缓存，我们能够提高系统的performance.</p>
 <p>要实现LRU缓存，我们首先要用到一个类 LinkedHashMap。 用这个类有两大好处：一是它本身已经实现了按照访问顺序的存储，也就是说，最近读取的会放在最前面，最最不常读取的会放在最后（当然，它也可以实现按照插入顺序存储）。第二，LinkedHashMap本身有一个方法用于判断是否需要移除最不常读取的数</p>
-<p>未完待续。。。。</p>
+<p>因此我们指导安卓里的LruCache这个核心类就是基于LinkedHashMap实现的。</p>
 
       
     </div>
@@ -346,6 +346,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/28/20160328-01/" rel="prev" title="java多进程回顾">
+                java多进程回顾 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -417,7 +421,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

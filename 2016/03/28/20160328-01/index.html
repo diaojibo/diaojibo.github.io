@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -57,40 +57,21 @@
 
 
 
-<meta name="description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
+<meta name="description" content="##进程与线程
+进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android中的dp与sp">
-<meta property="og:url" content="http://yoursite.com/2016/02/07/20160207-01/index.html">
+<meta property="og:title" content="java多进程回顾">
+<meta property="og:url" content="http://yoursite.com/2016/03/28/20160328-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
-<meta property="og:updated_time" content="2016-03-19T14:22:53.704Z">
+<meta property="og:description" content="##进程与线程
+进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行">
+<meta property="og:image" content="http://yoursite.com/2016/03/28/20160328-01/java-thread.jpg">
+<meta property="og:updated_time" content="2016-03-28T13:18:22.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中的dp与sp">
-<meta name="twitter:description" content="dp我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式
-
-像素密度 = 分辨率 / 实际长度(英寸为单位)
-
-好比 1.52 英寸的屏幕是 240\320 的，则她的像素密度是
-
-240 / 1.5 = 160 dpi(dots per Inch)
-
-所以不同的手机，里面显示的物体如果">
+<meta name="twitter:title" content="java多进程回顾">
+<meta name="twitter:description" content="##进程与线程
+进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/28/20160328-01/java-thread.jpg">
 
 
 
@@ -122,7 +103,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> Android中的dp与sp | 韬光养晦 </title>
+  <title> java多进程回顾 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +243,7 @@
             
             
               
-                Android中的dp与sp
+                java多进程回顾
               
             
           </h1>
@@ -274,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-07T17:12:13+08:00" content="2016-02-07">
-              2016-02-07
+            <time itemprop="dateCreated" datetime="2016-03-28T18:58:31+08:00" content="2016-03-28">
+              2016-03-28
             </time>
           </span>
 
@@ -288,8 +269,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -304,8 +285,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/07/20160207-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/07/20160207-01/" itemprop="commentsCount"></span>
+                <a href="/2016/03/28/20160328-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/20160328-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,22 +308,38 @@
       
 
       
-        <h3 id="dp"><a href="#dp" class="headerlink" title="dp"></a>dp</h3><p>我们的手机等设备是有一个实际尺寸的，比如1.5英寸*2英寸这样。这是绝对的单位，然后屏幕有分辨率，显示由像素点构成。这样就有像素密度这个概念了，我们可以得出一个公式</p>
+        <p>##进程与线程</p>
+<p>进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。线程的概念在主流的操作系统和编程语言中都得到了支持。</p>
+<p>##线程的生命周期</p>
+<p>一个线程存在不同的生命周期。如下图</p>
+<img src="/2016/03/28/20160328-01/java-thread.jpg" alt="This is an example image" title="This is an example image">
+<ul>
+<li><p>新建状态</p>
 <blockquote>
-<p>像素密度 = 分辨率 / 实际长度(英寸为单位)</p>
+<p>使用 new 关键字和 Thread 类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序 start() 这个线程。</p>
 </blockquote>
-<p>好比 1.5<em>2 英寸的屏幕是 240\</em>320 的，则她的像素密度是</p>
+</li>
+<li><p>就绪状态</p>
 <blockquote>
-<p>240 / 1.5 = 160 dpi(dots per Inch)</p>
+<p>当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。</p>
 </blockquote>
-<p>所以不同的手机，里面显示的物体如果根据固定像素现实的话实际长度也可能是不同的，因为像素密度的不同，固定像素 * 像素密度 得到的实际长度当然不一样。而dp就是为了解决这个问题，在像素密度不同的手机设备中，dp会根据不同的系数因子转化。</p>
+</li>
+<li><p>运行状态</p>
 <blockquote>
-<p>Android系统定义了四种像素密度：低（120dpi）、中（160dpi）、高（240dpi）和超高（320dpi），它们对应的dp到px的系数分别为0.75、1、1.5和2，这个系数乘以dp长度就是像素数。</p>
+<p>如果就绪状态的线程获取 CPU 资源，就可以执行 run()，此时线程便处于运行状态。处于运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态。</p>
 </blockquote>
-<h3 id="sp"><a href="#sp" class="headerlink" title="sp"></a>sp</h3><blockquote>
-<p>与缩放无关的抽象像素（Scale-independent Pixel）。sp和dp很类似但唯一的区别是，Android系统允许用户自定义文字尺寸大小（小、正常、大、超大等等），当文字尺寸是“正常”时1sp=1dp=0.00625英寸，而当文字尺寸是“大”或“超大”时，1sp&gt;1dp=0.00625英寸。类似我们在windows里调整字体尺寸以后的效果——窗口大小不变，只有文字大小改变。</p>
+</li>
+<li><p>阻塞状态</p>
+<blockquote>
+<p>如果一个线程执行了sleep（睡眠）、suspend（挂起）等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>反正就是文字尺寸用sp，非文字尺寸用dp。就是如此</p>
+</li>
+<li><p>死亡状态</p>
+<blockquote>
+<p>一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。</p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -357,7 +354,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/java/" rel="tag">#java</a>
           
         </div>
       
@@ -366,17 +363,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/05/20160205-01/" rel="next" title="java中的注解">
-                <i class="fa fa-chevron-left"></i> java中的注解
+              <a href="/2016/03/24/20160324-03/" rel="next" title="图片异步加载">
+                <i class="fa fa-chevron-left"></i> 图片异步加载
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/20/project_learning/" rel="prev" title="安卓实战学习记录01">
-                安卓实战学习记录01 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,8 +395,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/07/20160207-01/"
-           data-title="Android中的dp与sp" data-url="http://yoursite.com/2016/02/07/20160207-01/">
+      <div class="ds-thread" data-thread-key="2016/03/28/20160328-01/"
+           data-title="java多进程回顾" data-url="http://yoursite.com/2016/03/28/20160328-01/">
       </div>
     
   </div>
@@ -517,7 +510,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#dp"><span class="nav-number">1.</span> <span class="nav-text">dp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sp"><span class="nav-number">2.</span> <span class="nav-text">sp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
