@@ -83,7 +83,7 @@
 
 
  如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
-<meta property="og:updated_time" content="2016-03-24T13:11:21.864Z">
+<meta property="og:updated_time" content="2016-03-29T12:39:46.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java里的可达性和各种引用">
 <meta name="twitter:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
@@ -347,7 +347,7 @@
 </blockquote>
 <p>就是说，软引用对象的回收去决定于不同版本JVM的回收机制，回收之后软引用会返回null。</p>
 <ul>
-<li>软可达</li>
+<li>弱可达</li>
 </ul>
 <blockquote>
 <p>如果一个对象既没有强可达性，也没有软可达性，但是它可以通过一个弱引用(weak reference)来使用，那么他就具有弱可达性。当弱引用指向的弱可达对象没有其他的引用，那么这个对象就会被回收。</p>

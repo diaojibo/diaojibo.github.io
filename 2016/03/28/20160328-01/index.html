@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="韬光养晦">
 <meta property="og:description" content="进程与线程进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。">
 <meta property="og:image" content="http://yoursite.com/2016/03/28/20160328-01/java-thread.jpg">
-<meta property="og:updated_time" content="2016-03-28T14:28:59.030Z">
+<meta property="og:updated_time" content="2016-03-29T12:10:05.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java一些多进程知识点回顾">
 <meta name="twitter:description" content="进程与线程进程有一个包含了程序内容和数据的地址空间，以及其它的资源，包括打开的文件、子进程和信号处理器等。不同进程的地址空间是互相隔离的。而线程表示的是程序的执行流程，是CPU调度的基本单位。线程有自己的程序计数器、寄存器、栈和帧等。引入线程的动机在于操作系统中阻塞式I/O的存在。当一个线程所执行的I/O被阻塞的时候，同一进程中的其它线程可以使用CPU来进行计算。这样的话，就提高了应用的执行效率。">
@@ -349,6 +349,9 @@
 <p>这指的是一个线程在同步方法或者代码块中对共享变量做的任何改变，对随后的其他线程都是可见的</p>
 </blockquote>
 <p>因此可见，我们在对一个变量内存可见性高的时候应该使用这个关键字，经常需要读取出最新的值从内存中。并且需要注意的是，这个关键字<strong>不能保证原子性（如++操作）</strong></p>
+<h2 id="线程池的用法"><a href="#线程池的用法" class="headerlink" title="线程池的用法"></a>线程池的用法</h2><p>我们使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。</p>
+<h2 id="Executor-框架与线程池"><a href="#Executor-框架与线程池" class="headerlink" title="Executor 框架与线程池"></a>Executor 框架与线程池</h2><p>在 Java 5 之后，并发编程引入了一堆新的启动、调度和管理线程的API。Executor 框架便是 Java 5 中引入的，其内部使用了线程池机制，它在 java.util.cocurrent 包下，通过该框架来控制线程的启动、执行和关闭，可以简化并发编程的操作。因此，在 Java 5之后，通过 Executor 来启动线程比使用 Thread 的 start 方法更好，除了更易管理，效率更好（用线程池实现，节约开销）外，还有关键的一点：有助于避免 this 逃逸问题——如果我们在构造器中启动一个线程，因为另一个任务可能会在构造器结束之前开始执行，此时可能会访问到初始化了一半的对象用 Executor 在构造器中。</p>
+<p>Java里面线程池的顶级接口是Executor，但是严格意义上讲Executor并不是一个线程池，而只是一个执行线程的工具。真正的线程池接口是ExecutorService。</p>
 
       
     </div>
@@ -519,7 +522,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java线程同步"><span class="nav-number">3.</span> <span class="nav-text">java线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile的用法"><span class="nav-number">4.</span> <span class="nav-text">volatile的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原子性"><span class="nav-number">4.1.</span> <span class="nav-text">原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存可见性"><span class="nav-number">4.2.</span> <span class="nav-text">内存可见性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java线程同步"><span class="nav-number">3.</span> <span class="nav-text">java线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile的用法"><span class="nav-number">4.</span> <span class="nav-text">volatile的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原子性"><span class="nav-number">4.1.</span> <span class="nav-text">原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存可见性"><span class="nav-number">4.2.</span> <span class="nav-text">内存可见性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池的用法"><span class="nav-number">5.</span> <span class="nav-text">线程池的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Executor-框架与线程池"><span class="nav-number">6.</span> <span class="nav-text">Executor 框架与线程池</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
