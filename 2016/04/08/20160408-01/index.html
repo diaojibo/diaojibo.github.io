@@ -74,7 +74,7 @@ java虚拟机栈线程私有，生">
 此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
 java虚拟机栈线程私有，生">
 <meta property="og:image" content="http://yoursite.com/2016/04/08/20160408-01/memory.jpg">
-<meta property="og:updated_time" content="2016-04-08T16:20:04.733Z">
+<meta property="og:updated_time" content="2016-04-08T16:27:24.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java虚拟机笔记(1) java内存区域">
 <meta name="twitter:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
@@ -335,6 +335,9 @@ java虚拟机栈线程私有，生">
 <h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>和堆一样是各个线程共享去内存区域。用以存储虚拟机加载的类信息，常量，静态变量，即时编译器编译后的代码数据。有个别名为Non-Heap</p>
 <p>方法区无法满足内存分配时也会抛出OOM</p>
 <p>方法区中有一部分为运行时常量池，用于存放编译器生成的各种字面量和符号引用。</p>
+<blockquote>
+<p>以上笔记均摘抄自<em>深入理解java虚拟机-jvm高级特性与最佳实践</em> 这是一本非常棒的书，值得一看</p>
+</blockquote>
 
       
     </div>
