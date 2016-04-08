@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java java虚拟机," />
+  <meta name="keywords" content="java,java虚拟机," />
 
 
 
@@ -74,7 +74,7 @@ java虚拟机栈线程私有，生">
 此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
 java虚拟机栈线程私有，生">
 <meta property="og:image" content="http://yoursite.com/2016/04/08/20160408-01/memory.jpg">
-<meta property="og:updated_time" content="2016-04-08T14:44:16.869Z">
+<meta property="og:updated_time" content="2016-04-08T15:56:21.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java虚拟机笔记(1):java内存区域">
 <meta name="twitter:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
@@ -327,7 +327,8 @@ java虚拟机栈线程私有，生">
 <p>此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域</p>
 <h3 id="java虚拟机栈"><a href="#java虚拟机栈" class="headerlink" title="java虚拟机栈"></a>java虚拟机栈</h3><p>线程私有，生命周期与线程相同。每个方法在执行时都会创建一个栈帧(Stack Frame),用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法调用到执行完成的过程对应这一个栈帧在虚拟机栈中入栈到出栈。</p>
 <p>局部变量表里存放了编译期可知的各种基本数据类型(boolean byte char short int float double long)还有对象引用(reference)</p>
-<p>当进入一个方法时，这个方法需要在帧中分配多大的局部空间是完全确定的在方法运行期间不会改变局部变量表的大小。</p>
+<p>当进入一个方法时，这个方法需要在帧中分配多大的局部空间是完全确定的，在方法运行期间不会改变局部变量表的大小。</p>
+<p>在java虚拟机规范中，如果线程请求栈深度大于虚拟机允许的深度，将抛出StackOverFlow异常，无法申请到足够内存，将会抛出OutOfMemory异常。</p>
 
       
     </div>
@@ -342,7 +343,9 @@ java虚拟机栈线程私有，生">
       
         <div class="post-tags">
           
-            <a href="/tags/java-java虚拟机/" rel="tag">#java java虚拟机</a>
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/java虚拟机/" rel="tag">#java虚拟机</a>
           
         </div>
       
