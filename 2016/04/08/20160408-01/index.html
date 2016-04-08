@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="java java虚拟机," />
 
 
 
@@ -57,19 +57,33 @@
 
 
 
-<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
+
+程序计数器程序计数器是一个较小的内存空间，当前线程的字节码指示器，工作时通过改变这个计数器的值选取下一条需要执行的字节码指令
+每隔线程都需要一个独立的程序计数器，各线程互不影响，这块内存为线程私有内存
+此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
+java虚拟机栈线程私有，生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的堆内存和栈内存">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
+<meta property="og:title" content="java虚拟机笔记(1):java内存区域">
+<meta property="og:url" content="http://yoursite.com/2016/04/08/20160408-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
-<meta property="og:updated_time" content="2016-03-16T13:10:53.678Z">
+<meta property="og:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
+
+程序计数器程序计数器是一个较小的内存空间，当前线程的字节码指示器，工作时通过改变这个计数器的值选取下一条需要执行的字节码指令
+每隔线程都需要一个独立的程序计数器，各线程互不影响，这块内存为线程私有内存
+此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
+java虚拟机栈线程私有，生">
+<meta property="og:image" content="http://yoursite.com/2016/04/08/20160408-01/memory.jpg">
+<meta property="og:updated_time" content="2016-04-08T14:44:16.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的堆内存和栈内存">
-<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="twitter:title" content="java虚拟机笔记(1):java内存区域">
+<meta name="twitter:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
+
+程序计数器程序计数器是一个较小的内存空间，当前线程的字节码指示器，工作时通过改变这个计数器的值选取下一条需要执行的字节码指令
+每隔线程都需要一个独立的程序计数器，各线程互不影响，这块内存为线程私有内存
+此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
+java虚拟机栈线程私有，生">
+<meta name="twitter:image" content="http://yoursite.com/2016/04/08/20160408-01/memory.jpg">
 
 
 
@@ -101,7 +115,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
+  <title> java虚拟机笔记(1):java内存区域 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +255,7 @@
             
             
               
-                java中的堆内存和栈内存
+                java虚拟机笔记(1):java内存区域
               
             
           </h1>
@@ -253,8 +267,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T20:29:06+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-04-08T22:14:37+08:00" content="2016-04-08">
+              2016-04-08
             </time>
           </span>
 
@@ -283,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/29/20160129-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/20160129-01/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/20160408-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/20160408-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,11 +320,14 @@
       
 
       
-        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
-<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><h3 id="1-静态存储分配"><a href="#1-静态存储分配" class="headerlink" title="1.静态存储分配"></a>1.静态存储分配</h3><p>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
-<h3 id="2-栈式存储分配"><a href="#2-栈式存储分配" class="headerlink" title="2.栈式存储分配"></a>2.栈式存储分配</h3><p>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
-<h3 id="3-堆式存储分配"><a href="#3-堆式存储分配" class="headerlink" title="3.堆式存储分配"></a>3.堆式存储分配</h3><p>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
-<hr>
+        <h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p>java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。</p>
+<img src="/2016/04/08/20160408-01/memory.jpg" alt="This is an example image" title="This is an example image">
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一个较小的内存空间，当前线程的字节码指示器，工作时通过改变这个计数器的值选取下一条需要执行的字节码指令</p>
+<p>每隔线程都需要一个独立的程序计数器，各线程互不影响，这块内存为<strong>线程私有内存</strong></p>
+<p>此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域</p>
+<h3 id="java虚拟机栈"><a href="#java虚拟机栈" class="headerlink" title="java虚拟机栈"></a>java虚拟机栈</h3><p>线程私有，生命周期与线程相同。每个方法在执行时都会创建一个栈帧(Stack Frame),用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法调用到执行完成的过程对应这一个栈帧在虚拟机栈中入栈到出栈。</p>
+<p>局部变量表里存放了编译期可知的各种基本数据类型(boolean byte char short int float double long)还有对象引用(reference)</p>
+<p>当进入一个方法时，这个方法需要在帧中分配多大的局部空间是完全确定的在方法运行期间不会改变局部变量表的大小。</p>
 
       
     </div>
@@ -325,7 +342,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/java-java虚拟机/" rel="tag">#java java虚拟机</a>
           
         </div>
       
@@ -334,17 +351,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
-                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              <a href="/2016/03/28/20160328-01/" rel="next" title="java一些多进程知识点回顾">
+                <i class="fa fa-chevron-left"></i> java一些多进程知识点回顾
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/20160205-01/" rel="prev" title="java中的注解">
-                java中的注解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +383,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
-           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      <div class="ds-thread" data-thread-key="2016/04/08/20160408-01/"
+           data-title="java虚拟机笔记(1):java内存区域" data-url="http://yoursite.com/2016/04/08/20160408-01/">
       </div>
     
   </div>
@@ -485,7 +498,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态存储分配"><span class="nav-number">1.1.</span> <span class="nav-text">1.静态存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-栈式存储分配"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-堆式存储分配"><span class="nav-number">1.3.</span> <span class="nav-text">3.堆式存储分配</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时数据区域"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">java虚拟机栈</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
