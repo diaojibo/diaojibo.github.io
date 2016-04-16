@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,Android,software," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -57,19 +57,43 @@
 
 
 
-<meta name="description" content="IntelliJ Idea常用快捷键整理一下常用快捷键
-Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl+Alt+L  格式化代码Ctrl+Alt+O 优化导入的类和包Alt+Insert 生成代码(如get,set方法,构造函数等)Ctrl+E或者Alt+Shift+C  最近更改的代码Ctrl+R 替换文本Ctrl+F 查找文本Ctrl+Shif">
+<meta name="description" content="内存泄露毫无疑问，java里也是存在内存泄露的。内存泄露，即为一个不再被程序使用的对象或变量还在内存中占据存储空间。
+判断一个内存空间是否符合垃圾回收标准：
+
+给对象赋予空指针null，未再被使用
+给对象赋予新值，重新分配了内存空间
+
+即便java中存在垃圾回收机制，也不能确保不再使用的对象被准确回收。
+主要可能有以下几个方面：
+
+静态集合类，比如HashMap和Vector，生命周期与程序一致，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人idea快捷键整理">
-<meta property="og:url" content="http://yoursite.com/2016/01/25/20160125-01/index.html">
+<meta property="og:title" content="java中的内存泄露">
+<meta property="og:url" content="http://yoursite.com/2016/04/16/20160416-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="IntelliJ Idea常用快捷键整理一下常用快捷键
-Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl+Alt+L  格式化代码Ctrl+Alt+O 优化导入的类和包Alt+Insert 生成代码(如get,set方法,构造函数等)Ctrl+E或者Alt+Shift+C  最近更改的代码Ctrl+R 替换文本Ctrl+F 查找文本Ctrl+Shif">
-<meta property="og:updated_time" content="2016-03-16T10:45:14.647Z">
+<meta property="og:description" content="内存泄露毫无疑问，java里也是存在内存泄露的。内存泄露，即为一个不再被程序使用的对象或变量还在内存中占据存储空间。
+判断一个内存空间是否符合垃圾回收标准：
+
+给对象赋予空指针null，未再被使用
+给对象赋予新值，重新分配了内存空间
+
+即便java中存在垃圾回收机制，也不能确保不再使用的对象被准确回收。
+主要可能有以下几个方面：
+
+静态集合类，比如HashMap和Vector，生命周期与程序一致，">
+<meta property="og:updated_time" content="2016-04-16T13:16:15.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人idea快捷键整理">
-<meta name="twitter:description" content="IntelliJ Idea常用快捷键整理一下常用快捷键
-Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl+Alt+L  格式化代码Ctrl+Alt+O 优化导入的类和包Alt+Insert 生成代码(如get,set方法,构造函数等)Ctrl+E或者Alt+Shift+C  最近更改的代码Ctrl+R 替换文本Ctrl+F 查找文本Ctrl+Shif">
+<meta name="twitter:title" content="java中的内存泄露">
+<meta name="twitter:description" content="内存泄露毫无疑问，java里也是存在内存泄露的。内存泄露，即为一个不再被程序使用的对象或变量还在内存中占据存储空间。
+判断一个内存空间是否符合垃圾回收标准：
+
+给对象赋予空指针null，未再被使用
+给对象赋予新值，重新分配了内存空间
+
+即便java中存在垃圾回收机制，也不能确保不再使用的对象被准确回收。
+主要可能有以下几个方面：
+
+静态集合类，比如HashMap和Vector，生命周期与程序一致，">
 
 
 
@@ -101,7 +125,7 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
     margin-top: 50px;
   }
 </style>
-  <title> 个人idea快捷键整理 | 韬光养晦 </title>
+  <title> java中的内存泄露 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +265,7 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
             
             
               
-                个人idea快捷键整理
+                java中的内存泄露
               
             
           </h1>
@@ -253,8 +277,8 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T18:37:19+08:00" content="2016-01-25">
-              2016-01-25
+            <time itemprop="dateCreated" datetime="2016-04-16T21:05:19+08:00" content="2016-04-16">
+              2016-04-16
             </time>
           </span>
 
@@ -267,8 +291,8 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -283,8 +307,8 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/25/20160125-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/25/20160125-01/" itemprop="commentsCount"></span>
+                <a href="/2016/04/16/20160416-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/20160416-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,10 +330,21 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
       
 
       
-        <h1 id="IntelliJ-Idea常用快捷键"><a href="#IntelliJ-Idea常用快捷键" class="headerlink" title="IntelliJ Idea常用快捷键"></a>IntelliJ Idea常用快捷键</h1><p>整理一下常用快捷键</p>
-<p>Alt+回车 导入包,自动修正<br>Ctrl+N   查找类<br>Ctrl+Shift+N 查找文件<br>Ctrl+Alt+L  格式化代码<br>Ctrl+Alt+O 优化导入的类和包<br>Alt+Insert 生成代码(如get,set方法,构造函数等)<br>Ctrl+E或者Alt+Shift+C  最近更改的代码<br>Ctrl+R 替换文本<br>Ctrl+F 查找文本<br>Ctrl+Shift+Space 自动补全代码<br>Ctrl+空格 代码提示<br>Ctrl+Alt+Space 类名或接口名提示<br>Ctrl+P 方法参数提示<br>Ctrl+Shift+Alt+N 查找类中的方法或变量<br>Alt+Shift+C 对比最近修改的代码  </p>
-<p>Shift+F6  重构-重命名<br>Ctrl+Shift+先上键<br>Ctrl+X 删除行<br>Ctrl+D 复制行<br>Ctrl+/ 或 Ctrl+Shift+/  注释（// 或者/<em>…</em>/ ）<br>Ctrl+J  自动代码<br>Ctrl+E 最近打开的文件<br>Ctrl+H 显示类结构图<br>Ctrl+Q 显示注释文档<br>Alt+F1 查找代码所在位置<br>Alt+1 快速打开或隐藏工程面板<br>Ctrl+Alt+ left/right 返回至上次浏览的位置<br>Alt+ left/right 切换代码视图<br>Alt+ Up/Down 在方法间快速移动定位<br>Ctrl+Shift+Up/Down 代码向上/下移动。<br>F2 或Shift+F2 高亮错误或警告快速定位  </p>
-<p>代码标签输入完成后，按Tab，生成代码。<br>选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。<br>Ctrl+W 选中代码，连续按会有其他效果<br>选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。<br>Ctrl+Up/Down 光标跳转到第一行或最后一行下<br>Ctrl+B 快速打开光标处的类或方法   </p>
+        <h2 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h2><p>毫无疑问，java里也是存在内存泄露的。内存泄露，即为一个不再被程序使用的对象或变量还在内存中占据存储空间。</p>
+<p>判断一个内存空间是否符合垃圾回收标准：</p>
+<ol>
+<li>给对象赋予空指针null，未再被使用</li>
+<li>给对象赋予新值，重新分配了内存空间</li>
+</ol>
+<p>即便java中存在垃圾回收机制，也不能确保不再使用的对象被准确回收。</p>
+<p>主要可能有以下几个方面：</p>
+<ol>
+<li>静态集合类，比如HashMap和Vector，生命周期与程序一致，则容器中的对象可能将不被释放，造成内存泄露。</li>
+<li>各种数据库,网络，IO连接，需要显示close，否则很多类似ResultSet资源未能被很好的释放。</li>
+<li>监听器，很多时候往往释放对象的时候没有释放对应的监听器。</li>
+<li>变量不合理作用域，一个变量定义的作用大于其使用范围，导致被延后释放。解决方法可以是改为局部变量或者使用完成后设置为null</li>
+<li>单例模式可能存在内存泄露，如果单例模式里面有一个无关对象的引用，将导致该对象不能被释放。</li>
+</ol>
 
       
     </div>
@@ -326,10 +361,6 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
           
             <a href="/tags/java/" rel="tag">#java</a>
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-            <a href="/tags/software/" rel="tag">#software</a>
-          
         </div>
       
 
@@ -337,17 +368,13 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/26/20151226-01/" rel="next" title="genymotion windows兼容性问题">
-                <i class="fa fa-chevron-left"></i> genymotion windows兼容性问题
+              <a href="/2016/04/15/20160415-01/" rel="next" title="java虚拟机笔记(3) 类加载机制">
+                <i class="fa fa-chevron-left"></i> java虚拟机笔记(3) 类加载机制
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/29/20160129-01/" rel="prev" title="java中的堆内存和栈内存">
-                java中的堆内存和栈内存 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -373,8 +400,8 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/25/20160125-01/"
-           data-title="个人idea快捷键整理" data-url="http://yoursite.com/2016/01/25/20160125-01/">
+      <div class="ds-thread" data-thread-key="2016/04/16/20160416-01/"
+           data-title="java中的内存泄露" data-url="http://yoursite.com/2016/04/16/20160416-01/">
       </div>
     
   </div>
@@ -488,7 +515,7 @@ Alt+回车 导入包,自动修正Ctrl+N   查找类Ctrl+Shift+N 查找文件Ctrl
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IntelliJ-Idea常用快捷键"><span class="nav-number">1.</span> <span class="nav-text">IntelliJ Idea常用快捷键</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存泄露"><span class="nav-number">1.</span> <span class="nav-text">内存泄露</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
