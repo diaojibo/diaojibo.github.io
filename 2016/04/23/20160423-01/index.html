@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="操作系统," />
 
 
 
@@ -57,19 +57,30 @@
 
 
 
-<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="description" content="I/O设备I/O设备大致分为两类
+块设备信息存储在固定大小的块中，每个块都有自己的地址，是可寻址的。如硬盘，USB盘，ROM
+字符设备字符设备以字符为单位发送或者接受一个字符流，不考虑任何块结构，是不可寻址的，也没有任何寻道操作。比如打印机，网络接口，鼠标。
+其他以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。
+设备控制器I/O设备一般由机械部件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的堆内存和栈内存">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
+<meta property="og:title" content="操作系统原理---输入/输出">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/20160423-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
-<meta property="og:updated_time" content="2016-03-16T13:10:53.678Z">
+<meta property="og:description" content="I/O设备I/O设备大致分为两类
+块设备信息存储在固定大小的块中，每个块都有自己的地址，是可寻址的。如硬盘，USB盘，ROM
+字符设备字符设备以字符为单位发送或者接受一个字符流，不考虑任何块结构，是不可寻址的，也没有任何寻道操作。比如打印机，网络接口，鼠标。
+其他以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。
+设备控制器I/O设备一般由机械部件">
+<meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/io.png">
+<meta property="og:updated_time" content="2016-04-23T08:11:34.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的堆内存和栈内存">
-<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="twitter:title" content="操作系统原理---输入/输出">
+<meta name="twitter:description" content="I/O设备I/O设备大致分为两类
+块设备信息存储在固定大小的块中，每个块都有自己的地址，是可寻址的。如硬盘，USB盘，ROM
+字符设备字符设备以字符为单位发送或者接受一个字符流，不考虑任何块结构，是不可寻址的，也没有任何寻道操作。比如打印机，网络接口，鼠标。
+其他以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。
+设备控制器I/O设备一般由机械部件">
+<meta name="twitter:image" content="http://yoursite.com/2016/04/23/20160423-01/io.png">
 
 
 
@@ -101,7 +112,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
+  <title> 操作系统原理---输入/输出 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +252,7 @@
             
             
               
-                java中的堆内存和栈内存
+                操作系统原理---输入/输出
               
             
           </h1>
@@ -253,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T20:29:06+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-04-23T00:34:44+08:00" content="2016-04-23">
+              2016-04-23
             </time>
           </span>
 
@@ -267,8 +278,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/计算机原理/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机原理</span>
                   </a>
                 </span>
 
@@ -283,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/29/20160129-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/20160129-01/" itemprop="commentsCount"></span>
+                <a href="/2016/04/23/20160423-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/20160423-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,11 +317,13 @@
       
 
       
-        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
-<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><h3 id="1-静态存储分配"><a href="#1-静态存储分配" class="headerlink" title="1.静态存储分配"></a>1.静态存储分配</h3><p>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
-<h3 id="2-栈式存储分配"><a href="#2-栈式存储分配" class="headerlink" title="2.栈式存储分配"></a>2.栈式存储分配</h3><p>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
-<h3 id="3-堆式存储分配"><a href="#3-堆式存储分配" class="headerlink" title="3.堆式存储分配"></a>3.堆式存储分配</h3><p>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
-<hr>
+        <h2 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I/O设备"></a>I/O设备</h2><p>I/O设备大致分为两类</p>
+<h3 id="块设备"><a href="#块设备" class="headerlink" title="块设备"></a>块设备</h3><p>信息存储在固定大小的块中，每个块都有自己的地址，是可寻址的。如硬盘，USB盘，ROM</p>
+<h3 id="字符设备"><a href="#字符设备" class="headerlink" title="字符设备"></a>字符设备</h3><p>字符设备以字符为单位发送或者接受一个字符流，不考虑任何块结构，是不可寻址的，也没有任何寻道操作。比如打印机，网络接口，鼠标。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。</p>
+<h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>I/O设备一般由机械部件和电子部件两部分组成，电子部分称作<strong>设备控制器</strong>或者<strong>适配器</strong></p>
+<img src="/2016/04/23/20160423-01/io.png" alt="This is an example image" title="This is an example image">
+<p>控制器的任务是把串行的位流转换成字节块。</p>
 
       
     </div>
@@ -325,7 +338,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/操作系统/" rel="tag">#操作系统</a>
           
         </div>
       
@@ -334,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
-                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              <a href="/2016/04/18/20160418-02/" rel="next" title="Android 消息机制">
+                <i class="fa fa-chevron-left"></i> Android 消息机制
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/20160205-01/" rel="prev" title="java中的注解">
-                java中的注解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +379,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
-           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      <div class="ds-thread" data-thread-key="2016/04/23/20160423-01/"
+           data-title="操作系统原理---输入/输出" data-url="http://yoursite.com/2016/04/23/20160423-01/">
       </div>
     
   </div>
@@ -485,7 +494,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态存储分配"><span class="nav-number">1.1.</span> <span class="nav-text">1.静态存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-栈式存储分配"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-堆式存储分配"><span class="nav-number">1.3.</span> <span class="nav-text">3.堆式存储分配</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O设备"><span class="nav-number">1.</span> <span class="nav-text">I/O设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块设备"><span class="nav-number">1.1.</span> <span class="nav-text">块设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符设备"><span class="nav-number">1.2.</span> <span class="nav-text">字符设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备控制器"><span class="nav-number">2.</span> <span class="nav-text">设备控制器</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
