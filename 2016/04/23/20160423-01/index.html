@@ -63,7 +63,7 @@
 其他以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。
 设备控制器I/O设备一般由机械部件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统原理---输入/输出">
+<meta property="og:title" content="有关操作系统I/O的一些原理">
 <meta property="og:url" content="http://yoursite.com/2016/04/23/20160423-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
 <meta property="og:description" content="I/O设备I/O设备大致分为两类
@@ -72,9 +72,10 @@
 其他以上分类并不完美，比如时钟，工作是按照预定的时间间隔产生中断，海油内存映射的显示器也不符合以上模型。
 设备控制器I/O设备一般由机械部件">
 <meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/io.png">
-<meta property="og:updated_time" content="2016-04-25T11:55:08.888Z">
+<meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/buffer.jpg">
+<meta property="og:updated_time" content="2016-04-26T04:44:16.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="操作系统原理---输入/输出">
+<meta name="twitter:title" content="有关操作系统I/O的一些原理">
 <meta name="twitter:description" content="I/O设备I/O设备大致分为两类
 块设备信息存储在固定大小的块中，每个块都有自己的地址，是可寻址的。如硬盘，USB盘，ROM
 字符设备字符设备以字符为单位发送或者接受一个字符流，不考虑任何块结构，是不可寻址的，也没有任何寻道操作。比如打印机，网络接口，鼠标。
@@ -112,7 +113,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> 操作系统原理---输入/输出 | 韬光养晦 </title>
+  <title> 有关操作系统I/O的一些原理 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +253,7 @@
             
             
               
-                操作系统原理---输入/输出
+                有关操作系统I/O的一些原理
               
             
           </h1>
@@ -324,6 +325,12 @@
 <h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>I/O设备一般由机械部件和电子部件两部分组成，电子部分称作<strong>设备控制器</strong>或者<strong>适配器</strong>。</p>
 <img src="/2016/04/23/20160423-01/io.png" alt="This is an example image" title="This is an example image">
 <p>控制器的任务是把串行的位流转换成字节块</p>
+<h2 id="内存映射"><a href="#内存映射" class="headerlink" title="内存映射"></a>内存映射</h2><p>内存映射是指将硬盘上文件的位置与进程逻辑地址空间中一块大小相同的区域一一对应，当要访问内存中一段数据时，转换为访问文件的某一段数据。这种方式的目的同样是减少数据在用户空间和内核空间之间的拷贝操作。当大量数据需要传输的时候，采用内存映射方式去访问文件会获得比较好的效率。</p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>对于IO设备，缓冲是一个重要问题。<br><img src="/2016/04/23/20160423-01/buffer.jpg" alt="This is an example image" title="This is an example image"></p>
+<h3 id="用户缓冲区"><a href="#用户缓冲区" class="headerlink" title="用户缓冲区"></a>用户缓冲区</h3><p>一种改进措施是，在用户空间设置缓冲区提高效率。但是万一缓冲区被分页出去了则相当危险，这要锁定内存，但是锁定内存降低分页效率。</p>
+<h3 id="内核缓冲区"><a href="#内核缓冲区" class="headerlink" title="内核缓冲区"></a>内核缓冲区</h3><p>另一种改进是在内核空间创建一个缓冲区，该缓冲区满的时候，将用户缓存区调入内存并复制过去。</p>
+<h3 id="双缓冲区"><a href="#双缓冲区" class="headerlink" title="双缓冲区"></a>双缓冲区</h3><p>只用一个内核缓冲区的话，当内核缓冲区满并且还没写入用户缓冲区的时候将无法写入数据。所以设置两个内核缓冲区做缓冲，一个满了的时候临时使用另外一个。</p>
+<p>###循环缓冲区<br>被广泛使用，一个内存区域设置两个指针，一个指向下一个空闲位置，一个指向数据位置。两个指针环绕，并且到达顶部时返回底部。</p>
 
       
     </div>
@@ -380,7 +387,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/23/20160423-01/"
-           data-title="操作系统原理---输入/输出" data-url="http://yoursite.com/2016/04/23/20160423-01/">
+           data-title="有关操作系统I/O的一些原理" data-url="http://yoursite.com/2016/04/23/20160423-01/">
       </div>
     
   </div>
@@ -494,7 +501,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O设备"><span class="nav-number">1.</span> <span class="nav-text">I/O设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块设备"><span class="nav-number">1.1.</span> <span class="nav-text">块设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符设备"><span class="nav-number">1.2.</span> <span class="nav-text">字符设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备控制器"><span class="nav-number">2.</span> <span class="nav-text">设备控制器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O设备"><span class="nav-number">1.</span> <span class="nav-text">I/O设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块设备"><span class="nav-number">1.1.</span> <span class="nav-text">块设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符设备"><span class="nav-number">1.2.</span> <span class="nav-text">字符设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备控制器"><span class="nav-number">2.</span> <span class="nav-text">设备控制器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存映射"><span class="nav-number">3.</span> <span class="nav-text">内存映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存"><span class="nav-number">4.</span> <span class="nav-text">缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户缓冲区"><span class="nav-number">4.1.</span> <span class="nav-text">用户缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核缓冲区"><span class="nav-number">4.2.</span> <span class="nav-text">内核缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双缓冲区"><span class="nav-number">4.3.</span> <span class="nav-text">双缓冲区</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
