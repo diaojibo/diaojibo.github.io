@@ -73,7 +73,7 @@
 设备控制器I/O设备一般由机械部件">
 <meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/io.png">
 <meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/buffer.jpg">
-<meta property="og:updated_time" content="2016-04-26T04:45:11.590Z">
+<meta property="og:updated_time" content="2016-04-28T13:40:38.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关操作系统I/O的一些原理">
 <meta name="twitter:description" content="I/O设备I/O设备大致分为两类
@@ -330,7 +330,7 @@
 <h3 id="用户缓冲区"><a href="#用户缓冲区" class="headerlink" title="用户缓冲区"></a>用户缓冲区</h3><p>一种改进措施是，在用户空间设置缓冲区提高效率。但是万一缓冲区被分页出去了则相当危险，这要锁定内存，但是锁定内存降低分页效率。</p>
 <h3 id="内核缓冲区"><a href="#内核缓冲区" class="headerlink" title="内核缓冲区"></a>内核缓冲区</h3><p>另一种改进是在内核空间创建一个缓冲区，该缓冲区满的时候，将用户缓存区调入内存并复制过去。</p>
 <h3 id="双缓冲区"><a href="#双缓冲区" class="headerlink" title="双缓冲区"></a>双缓冲区</h3><p>只用一个内核缓冲区的话，当内核缓冲区满并且还没写入用户缓冲区的时候将无法写入数据。所以设置两个内核缓冲区做缓冲，一个满了的时候临时使用另外一个。</p>
-<h3 id="循环缓冲区"><a href="#循环缓冲区" class="headerlink" title="循环缓冲区"></a>循环缓冲区</h3><p>被广泛使用，一个内存区域设置两个指针，一个指向下一个空闲位置，一个指向数据位置。两个指针环绕，并且到达顶部时返回底部。</p>
+<h3 id="循环缓冲区"><a href="#循环缓冲区" class="headerlink" title="循环缓冲区"></a>循环缓冲区</h3><p>被广泛使用，一个内存区域设置两个指针，一个指向下一个空闲位置，一个指向数据位置。两个指针环绕，并且到达顶部时返回底部</p>
 
       
     </div>
