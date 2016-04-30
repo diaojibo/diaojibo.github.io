@@ -1,1 +1,2 @@
 git push origin2 backup_source
+//for backup all the directory

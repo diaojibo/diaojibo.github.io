@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java java虚拟机," />
+  <meta name="keywords" content="java,java虚拟机," />
 
 
 
@@ -64,7 +64,7 @@
 此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
 java虚拟机栈线程私有，生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java虚拟机笔记(1):java内存区域">
+<meta property="og:title" content="java虚拟机笔记(1) java内存区域">
 <meta property="og:url" content="http://yoursite.com/2016/04/08/20160408-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
 <meta property="og:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
@@ -74,9 +74,9 @@ java虚拟机栈线程私有，生">
 此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域
 java虚拟机栈线程私有，生">
 <meta property="og:image" content="http://yoursite.com/2016/04/08/20160408-01/memory.jpg">
-<meta property="og:updated_time" content="2016-04-08T14:44:16.869Z">
+<meta property="og:updated_time" content="2016-04-08T16:28:21.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java虚拟机笔记(1):java内存区域">
+<meta name="twitter:title" content="java虚拟机笔记(1) java内存区域">
 <meta name="twitter:description" content="运行时数据区域java虚拟机在执行java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。
 
 程序计数器程序计数器是一个较小的内存空间，当前线程的字节码指示器，工作时通过改变这个计数器的值选取下一条需要执行的字节码指令
@@ -115,7 +115,7 @@ java虚拟机栈线程私有，生">
     margin-top: 50px;
   }
 </style>
-  <title> java虚拟机笔记(1):java内存区域 | 韬光养晦 </title>
+  <title> java虚拟机笔记(1) java内存区域 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +255,7 @@ java虚拟机栈线程私有，生">
             
             
               
-                java虚拟机笔记(1):java内存区域
+                java虚拟机笔记(1) java内存区域
               
             
           </h1>
@@ -327,7 +327,18 @@ java虚拟机栈线程私有，生">
 <p>此区域是唯一一在java虚拟机规范中没有规定任何OOM情况的区域</p>
 <h3 id="java虚拟机栈"><a href="#java虚拟机栈" class="headerlink" title="java虚拟机栈"></a>java虚拟机栈</h3><p>线程私有，生命周期与线程相同。每个方法在执行时都会创建一个栈帧(Stack Frame),用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法调用到执行完成的过程对应这一个栈帧在虚拟机栈中入栈到出栈。</p>
 <p>局部变量表里存放了编译期可知的各种基本数据类型(boolean byte char short int float double long)还有对象引用(reference)</p>
-<p>当进入一个方法时，这个方法需要在帧中分配多大的局部空间是完全确定的在方法运行期间不会改变局部变量表的大小。</p>
+<p>当进入一个方法时，这个方法需要在帧中分配多大的局部空间是完全确定的，在方法运行期间不会改变局部变量表的大小。</p>
+<p>在java虚拟机规范中，如果线程请求栈深度大于虚拟机允许的深度，将抛出StackOverFlow异常，无法申请到足够内存，将会抛出OutOfMemory异常。</p>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>和虚拟机栈功能十分相似，虚拟机栈为执行java方法服务，本地方法栈则为虚拟机使用到的native方法服务。与虚拟机栈一样，会抛出栈溢出和OOM错误。</p>
+<h3 id="java堆"><a href="#java堆" class="headerlink" title="java堆"></a>java堆</h3><p>java虚拟机中管理内存最大的一块，被所有线程共享。此区唯一的目的就是存放对象实例，几乎所有实例对象和数组都在这里分配内存。</p>
+<p>java堆是垃圾收集器管理的主要区域。从内存分配的角度看，还可能分出线程私有的分配缓冲区。java堆可以分配在物理上不连续的内存空间中，但逻辑上是连续的。当堆再也无法扩展时，抛出OOM异常。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>和堆一样是各个线程共享去内存区域。用以存储虚拟机加载的类信息，常量，静态变量，即时编译器编译后的代码数据。有个别名为Non-Heap</p>
+<p>方法区无法满足内存分配时也会抛出OOM</p>
+<p>方法区中有一部分为运行时常量池，用于存放编译器生成的各种字面量和符号引用。</p>
+<blockquote>
+<p>以上笔记均摘抄自<em>深入理解java虚拟机-jvm高级特性与最佳实践</em> </p>
+<p>这是一本非常棒的书，值得一看</p>
+</blockquote>
 
       
     </div>
@@ -342,7 +353,9 @@ java虚拟机栈线程私有，生">
       
         <div class="post-tags">
           
-            <a href="/tags/java-java虚拟机/" rel="tag">#java java虚拟机</a>
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/java虚拟机/" rel="tag">#java虚拟机</a>
           
         </div>
       
@@ -358,6 +371,10 @@ java虚拟机栈线程私有，生">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/09/20160409-01/" rel="prev" title="java虚拟机笔记(2) 垃圾回收器与内存分配">
+                java虚拟机笔记(2) 垃圾回收器与内存分配 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -384,7 +401,7 @@ java虚拟机栈线程私有，生">
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/08/20160408-01/"
-           data-title="java虚拟机笔记(1):java内存区域" data-url="http://yoursite.com/2016/04/08/20160408-01/">
+           data-title="java虚拟机笔记(1) java内存区域" data-url="http://yoursite.com/2016/04/08/20160408-01/">
       </div>
     
   </div>
@@ -429,7 +446,7 @@ java虚拟机栈线程私有，生">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -437,7 +454,7 @@ java虚拟机栈线程私有，生">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -446,7 +463,7 @@ java虚拟机栈线程私有，生">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -498,7 +515,7 @@ java虚拟机栈线程私有，生">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时数据区域"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">java虚拟机栈</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时数据区域"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">java虚拟机栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地方法栈"><span class="nav-number">1.3.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java堆"><span class="nav-number">1.4.</span> <span class="nav-text">java堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">1.5.</span> <span class="nav-text">方法区</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
