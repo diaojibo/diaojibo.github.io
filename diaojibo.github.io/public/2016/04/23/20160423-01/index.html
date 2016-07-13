@@ -73,7 +73,7 @@
 设备控制器I/O设备一般由机械部件">
 <meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/io.png">
 <meta property="og:image" content="http://yoursite.com/2016/04/23/20160423-01/buffer.jpg">
-<meta property="og:updated_time" content="2016-04-29T11:44:53.909Z">
+<meta property="og:updated_time" content="2016-05-13T10:23:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关操作系统I/O的一些原理">
 <meta name="twitter:description" content="I/O设备I/O设备大致分为两类
@@ -325,7 +325,7 @@
 <h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>I/O设备一般由机械部件和电子部件两部分组成，电子部分称作<strong>设备控制器</strong>或者<strong>适配器</strong>。</p>
 <img src="/2016/04/23/20160423-01/io.png" alt="This is an example image" title="This is an example image">
 <p>控制器的任务是把串行的位流转换成字节块</p>
-<h2 id="内存映射"><a href="#内存映射" class="headerlink" title="内存映射"></a>内存映射</h2><p>内存映射是指将硬盘上文件的位置与进程逻辑地址空间中一块大小相同的区域一一对应，当要访问内存中一段数据时，转换为访问文件的某一段数据。这种方式的目的同样是减少数据在用户空间和内核空间之间的拷贝操作。当大量数据需要传输的时候，采用内存映射方式去访问文件会获得比较好的效率。</p>
+<h2 id="内存映射"><a href="#内存映射" class="headerlink" title="内存映射"></a>内存映射</h2><p>内存映射是指将硬盘上文件的位置与进程逻辑地址空间中一块大小相同的区域一一对应，当要访问内存中一段数据时，转换为访问文件的某一段数据。这种方式的目的同样是减少数据在用户空间和内核空间之间的拷贝操作。当大量数据需要传输的时候，采用内存映射方式去访问文件会获得比较好的效率</p>
 <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>对于IO设备，缓冲是一个重要问题。<br><img src="/2016/04/23/20160423-01/buffer.jpg" alt="This is an example image" title="This is an example image"></p>
 <h3 id="用户缓冲区"><a href="#用户缓冲区" class="headerlink" title="用户缓冲区"></a>用户缓冲区</h3><p>一种改进措施是，在用户空间设置缓冲区提高效率。但是万一缓冲区被分页出去了则相当危险，这要锁定内存，但是锁定内存降低分页效率。</p>
 <h3 id="内核缓冲区"><a href="#内核缓冲区" class="headerlink" title="内核缓冲区"></a>内核缓冲区</h3><p>另一种改进是在内核空间创建一个缓冲区，该缓冲区满的时候，将用户缓存区调入内存并复制过去。</p>
@@ -361,6 +361,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/08/20160508-01/" rel="prev" title="Fragment的懒加载">
+                Fragment的懒加载 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -432,7 +436,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -76,6 +76,7 @@ deploy:
  - type: git 
    repo : git@git.coding.net:rocklct/rocklct.git
 
+
 # Social links
 social:
   GitHub: https://github.com/diaojibo
