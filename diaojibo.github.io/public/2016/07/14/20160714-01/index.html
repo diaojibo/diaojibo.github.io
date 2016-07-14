@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -57,22 +57,30 @@
 
 
 
-<meta name="description" content="应用开发的时候若是出现ViewPager与多个Fragment组合使用，则每个Fragment都去加载数据会降低效率和性能，所以应当切换到这个Fragment的时候才去初始化它。
-所以可以使用Fragment里的SetUserVisibleHint这个方法.
-1234567891011public void setUserVisibleHint(boolean isVisibleToUser) &amp;">
+<meta name="description" content="代理模式
+如图即为设计模式的结构图
+Subject类Subject类为抽象角色(接口)，里面抽象出角色的一些功能。
+RealSubjectSubject类的具体实现，为真实对象。具体实现了接口的方法。
+Proxy类代理角色类。注意这个类同样也实现了Subject接口，目的就是为了在某些情况代替RealSubject这个真实角色类来处理某些问题，这就是做代理了。同时，注意到结构图里面Proxy指向R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fragment的懒加载">
-<meta property="og:url" content="http://yoursite.com/2016/05/08/20160508-01/index.html">
+<meta property="og:title" content="设计模式之代理模式">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/20160714-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="应用开发的时候若是出现ViewPager与多个Fragment组合使用，则每个Fragment都去加载数据会降低效率和性能，所以应当切换到这个Fragment的时候才去初始化它。
-所以可以使用Fragment里的SetUserVisibleHint这个方法.
-1234567891011public void setUserVisibleHint(boolean isVisibleToUser) &amp;">
-<meta property="og:updated_time" content="2016-05-25T14:40:51.000Z">
+<meta property="og:description" content="代理模式
+如图即为设计模式的结构图
+Subject类Subject类为抽象角色(接口)，里面抽象出角色的一些功能。
+RealSubjectSubject类的具体实现，为真实对象。具体实现了接口的方法。
+Proxy类代理角色类。注意这个类同样也实现了Subject接口，目的就是为了在某些情况代替RealSubject这个真实角色类来处理某些问题，这就是做代理了。同时，注意到结构图里面Proxy指向R">
+<meta property="og:image" content="http://yoursite.com/2016/07/14/20160714-01/proxy.jpg">
+<meta property="og:updated_time" content="2016-07-14T06:43:50.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fragment的懒加载">
-<meta name="twitter:description" content="应用开发的时候若是出现ViewPager与多个Fragment组合使用，则每个Fragment都去加载数据会降低效率和性能，所以应当切换到这个Fragment的时候才去初始化它。
-所以可以使用Fragment里的SetUserVisibleHint这个方法.
-1234567891011public void setUserVisibleHint(boolean isVisibleToUser) &amp;">
+<meta name="twitter:title" content="设计模式之代理模式">
+<meta name="twitter:description" content="代理模式
+如图即为设计模式的结构图
+Subject类Subject类为抽象角色(接口)，里面抽象出角色的一些功能。
+RealSubjectSubject类的具体实现，为真实对象。具体实现了接口的方法。
+Proxy类代理角色类。注意这个类同样也实现了Subject接口，目的就是为了在某些情况代替RealSubject这个真实角色类来处理某些问题，这就是做代理了。同时，注意到结构图里面Proxy指向R">
+<meta name="twitter:image" content="http://yoursite.com/2016/07/14/20160714-01/proxy.jpg">
 
 
 
@@ -104,7 +112,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> Fragment的懒加载 | 韬光养晦 </title>
+  <title> 设计模式之代理模式 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +252,7 @@
             
             
               
-                Fragment的懒加载
+                设计模式之代理模式
               
             
           </h1>
@@ -256,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-08T16:59:31+08:00" content="2016-05-08">
-              2016-05-08
+            <time itemprop="dateCreated" datetime="2016-07-14T14:32:46+08:00" content="2016-07-14">
+              2016-07-14
             </time>
           </span>
 
@@ -270,8 +278,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -286,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/08/20160508-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/08/20160508-01/" itemprop="commentsCount"></span>
+                <a href="/2016/07/14/20160714-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/14/20160714-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -309,11 +317,12 @@
       
 
       
-        <p>应用开发的时候若是出现ViewPager与多个Fragment组合使用，则每个Fragment都去加载数据会降低效率和性能，所以应当切换到这个Fragment的时候才去初始化它。</p>
-<p>所以可以使用Fragment里的SetUserVisibleHint这个方法.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserVisibleHint</span><span class="params">(<span class="keyword">boolean</span> isVisibleToUser)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">super</span>.setUserVisibleHint(isVisibleToUser);</span><br><span class="line">     <span class="keyword">if</span>(getUserVisibleHint()) &#123;</span><br><span class="line">         isVisible = <span class="keyword">true</span>;</span><br><span class="line">         onVisible();</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         isVisible = <span class="keyword">false</span>;</span><br><span class="line">         onInvisible();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>onVisible是当可见的时候执行的方法，load等操作应该在这里面执行.</p>
-
+        <h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><img src="/2016/07/14/20160714-01/proxy.jpg" alt="This is an example image" title="This is an example image">
+<p>如图即为设计模式的结构图</p>
+<h3 id="Subject类"><a href="#Subject类" class="headerlink" title="Subject类"></a>Subject类</h3><p>Subject类为抽象角色(接口)，里面抽象出角色的一些功能。</p>
+<h3 id="RealSubject"><a href="#RealSubject" class="headerlink" title="RealSubject"></a>RealSubject</h3><p>Subject类的具体实现，为真实对象。具体实现了接口的方法。</p>
+<h3 id="Proxy类"><a href="#Proxy类" class="headerlink" title="Proxy类"></a>Proxy类</h3><p>代理角色类。注意这个类同样也实现了Subject接口，目的就是为了在某些情况代替RealSubject这个真实角色类来处理某些问题，这就是做代理了。同时，注意到结构图里面Proxy指向RealSubject类的箭头，是指Proxy以组合的方式，持有RealSubject类的一个引用，这样可以在对应的接口方法里调用RealSubject类的具体实现方法。</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3>
       
     </div>
 
@@ -327,7 +336,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
         </div>
       
@@ -336,17 +345,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/20160423-01/" rel="next" title="有关操作系统I/O的一些原理">
-                <i class="fa fa-chevron-left"></i> 有关操作系统I/O的一些原理
+              <a href="/2016/06/04/20160604-01/" rel="next" title="RESTful架构">
+                <i class="fa fa-chevron-left"></i> RESTful架构
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/29/2016-05-29/" rel="prev" title="osx socks5(shadow socks)代理转http代理">
-                osx socks5(shadow socks)代理转http代理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -372,8 +377,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/08/20160508-01/"
-           data-title="Fragment的懒加载" data-url="http://yoursite.com/2016/05/08/20160508-01/">
+      <div class="ds-thread" data-thread-key="2016/07/14/20160714-01/"
+           data-title="设计模式之代理模式" data-url="http://yoursite.com/2016/07/14/20160714-01/">
       </div>
     
   </div>
@@ -487,7 +492,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代理模式"><span class="nav-number">1.</span> <span class="nav-text">代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subject类"><span class="nav-number">1.1.</span> <span class="nav-text">Subject类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RealSubject"><span class="nav-number">1.2.</span> <span class="nav-text">RealSubject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy类"><span class="nav-number">1.3.</span> <span class="nav-text">Proxy类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景"><span class="nav-number">1.4.</span> <span class="nav-text">使用场景</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
