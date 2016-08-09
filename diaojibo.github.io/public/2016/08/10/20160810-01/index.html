@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="description" content="此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。
+找出某两点间所有的最短路径众所周知，最短路径的经典算法有那几种。比如Floyd算法，dij算法，spfa算法等。其中最为经典的也就算是dij算法了。但是现在有一个需求是需要找出某原点到某目的点的所有最短路径。
+而最朴素的dij算法，只能求得单源最短路径的某个值。通过网上查阅论文可以知道，有许多方法可以依据d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的堆内存和栈内存">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
+<meta property="og:title" content="PAT试前准备">
+<meta property="og:url" content="http://yoursite.com/2016/08/10/20160810-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
-<meta property="og:updated_time" content="2016-03-16T13:10:53.000Z">
+<meta property="og:description" content="此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。
+找出某两点间所有的最短路径众所周知，最短路径的经典算法有那几种。比如Floyd算法，dij算法，spfa算法等。其中最为经典的也就算是dij算法了。但是现在有一个需求是需要找出某原点到某目的点的所有最短路径。
+而最朴素的dij算法，只能求得单源最短路径的某个值。通过网上查阅论文可以知道，有许多方法可以依据d">
+<meta property="og:updated_time" content="2016-08-09T17:21:45.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的堆内存和栈内存">
-<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="twitter:title" content="PAT试前准备">
+<meta name="twitter:description" content="此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。
+找出某两点间所有的最短路径众所周知，最短路径的经典算法有那几种。比如Floyd算法，dij算法，spfa算法等。其中最为经典的也就算是dij算法了。但是现在有一个需求是需要找出某原点到某目的点的所有最短路径。
+而最朴素的dij算法，只能求得单源最短路径的某个值。通过网上查阅论文可以知道，有许多方法可以依据d">
 
 
 
@@ -101,7 +104,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
+  <title> PAT试前准备 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +244,7 @@
             
             
               
-                java中的堆内存和栈内存
+                PAT试前准备
               
             
           </h1>
@@ -253,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T20:29:06+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-08-10T00:50:37+08:00" content="2016-08-10">
+              2016-08-10
             </time>
           </span>
 
@@ -267,8 +270,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -283,8 +286,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/29/20160129-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/20160129-01/" itemprop="commentsCount"></span>
+                <a href="/2016/08/10/20160810-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/10/20160810-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,12 +309,11 @@
       
 
       
-        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
-<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><h3 id="1-静态存储分配"><a href="#1-静态存储分配" class="headerlink" title="1.静态存储分配"></a>1.静态存储分配</h3><p>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
-<h3 id="2-栈式存储分配"><a href="#2-栈式存储分配" class="headerlink" title="2.栈式存储分配"></a>2.栈式存储分配</h3><p>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
-<h3 id="3-堆式存储分配"><a href="#3-堆式存储分配" class="headerlink" title="3.堆式存储分配"></a>3.堆式存储分配</h3><p>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
-<hr>
-
+        <p>此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。</p>
+<h3 id="找出某两点间所有的最短路径"><a href="#找出某两点间所有的最短路径" class="headerlink" title="找出某两点间所有的最短路径"></a>找出某两点间所有的最短路径</h3><p>众所周知，最短路径的经典算法有那几种。比如Floyd算法，dij算法，spfa算法等。其中最为经典的也就算是dij算法了。但是现在有一个需求是需要找出某原点到某目的点的所有最短路径。</p>
+<p>而最朴素的dij算法，只能求得单源最短路径的某个值。通过网上查阅论文可以知道，有许多方法可以依据dij算法找出两点间所有最短路径，其中还有构造新图的方法。但是最直接的方法莫过于想办法枚举出所有的最短路径出来的了</p>
+<p>当我们需要一条具体最短路径的时候，一版都是在更新最短距离的时候，把每个点的前缀点都记录上，这样从终点就可以一个一个倒推回去，知道哪些点最短时是从哪些点来。同理，如若要求出所有的最短路径，那么最直接的方法就是更新到有相同的最短距离时，把前缀的node记成一个列表，从而把可行的前缀点都记录下来。意思就是，每个点的前缀不再是一个点，而是下拉成一个list，从而最后可以通过dfs找出所有可能性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python算法的具体实现</span></span><br><span class="line"><span class="comment">#常规dij算法上的一些改进</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dij</span><span class="params">(source,target)</span>:</span></span><br><span class="line">  parent = [[] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">  isVisited = [<span class="keyword">False</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">  isVisited[source] = <span class="keyword">True</span></span><br><span class="line">  dest = [map[source][i] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">  dest[source] = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">    min = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">not</span> isVisited[j]) <span class="keyword">and</span> (dest[j]!=<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">if</span> min==<span class="number">-1</span> <span class="keyword">or</span> dest[j]&lt;dest[min]:</span><br><span class="line">          min = j</span><br><span class="line">    isVisited[min] = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">      <span class="keyword">if</span> map[min][j]!=<span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">if</span> dest[j] == <span class="number">-1</span> <span class="keyword">or</span> dest[min]+map[min][j]&lt;=dest[j]:</span><br><span class="line">          <span class="comment">#如果发现更新的距离与现有的最短距离相同,则添加前缀节点</span></span><br><span class="line">          <span class="keyword">if</span> dest[j] == dest[min]+map[min][j]:</span><br><span class="line">            <span class="comment">#parent添加前缀节点</span></span><br><span class="line">            parent[j].append(min)</span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#最短路径长度的更新，以前的前缀点都不算数，清空重计</span></span><br><span class="line">            parent[j] = [min]</span><br><span class="line">          dest[j] = dest[min]+map[min][j]</span><br><span class="line">  <span class="keyword">return</span> parent,dest[target]</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -325,7 +327,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -334,17 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
-                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              <a href="/2016/07/14/20160714-01/" rel="next" title="设计模式之代理模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之代理模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/20160205-01/" rel="prev" title="java中的注解">
-                java中的注解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +368,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
-           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      <div class="ds-thread" data-thread-key="2016/08/10/20160810-01/"
+           data-title="PAT试前准备" data-url="http://yoursite.com/2016/08/10/20160810-01/">
       </div>
     
   </div>
@@ -485,7 +483,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态存储分配"><span class="nav-number">1.1.</span> <span class="nav-text">1.静态存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-栈式存储分配"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-堆式存储分配"><span class="nav-number">1.3.</span> <span class="nav-text">3.堆式存储分配</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#找出某两点间所有的最短路径"><span class="nav-number">1.</span> <span class="nav-text">找出某两点间所有的最短路径</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
