@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="软件使用," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -57,21 +57,25 @@
 
 
 
-<meta name="description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
+<meta name="description" content="无论是算法题当中还是面试题当中经常能见到有关位运算的知识点。所以特地整理一下，来攻破它。
+在c语言中&amp;amp;表示与，|表示或，^表示异或。~代表取反，&amp;lt;&amp;lt;代表左移，&amp;gt;&amp;gt;代表右移。
+注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是算术右移，高位补符号位。一种是逻辑右移，高位补0.微软的vc6.0和vs2008都是算数右移。
+常用的位运算有一下几种小技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android studio解决gradle下载慢的问题">
-<meta property="og:url" content="http://yoursite.com/2016/03/23/20160323-01/index.html">
+<meta property="og:title" content="位运算知识整理">
+<meta property="og:url" content="http://yoursite.com/2016/09/05/20160905-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
-<meta property="og:image" content="http://yoursite.com/2016/03/23/20160323-01/example.jpg">
-<meta property="og:updated_time" content="2016-03-23T12:18:38.000Z">
+<meta property="og:description" content="无论是算法题当中还是面试题当中经常能见到有关位运算的知识点。所以特地整理一下，来攻破它。
+在c语言中&amp;amp;表示与，|表示或，^表示异或。~代表取反，&amp;lt;&amp;lt;代表左移，&amp;gt;&amp;gt;代表右移。
+注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是算术右移，高位补符号位。一种是逻辑右移，高位补0.微软的vc6.0和vs2008都是算数右移。
+常用的位运算有一下几种小技巧">
+<meta property="og:updated_time" content="2016-09-05T16:19:21.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android studio解决gradle下载慢的问题">
-<meta name="twitter:description" content="gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。
-那只需在Android studio中，setting 的 http proxy下。如图配置即可">
-<meta name="twitter:image" content="http://yoursite.com/2016/03/23/20160323-01/example.jpg">
+<meta name="twitter:title" content="位运算知识整理">
+<meta name="twitter:description" content="无论是算法题当中还是面试题当中经常能见到有关位运算的知识点。所以特地整理一下，来攻破它。
+在c语言中&amp;amp;表示与，|表示或，^表示异或。~代表取反，&amp;lt;&amp;lt;代表左移，&amp;gt;&amp;gt;代表右移。
+注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是算术右移，高位补符号位。一种是逻辑右移，高位补0.微软的vc6.0和vs2008都是算数右移。
+常用的位运算有一下几种小技巧">
 
 
 
@@ -103,7 +107,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> Android studio解决gradle下载慢的问题 | 韬光养晦 </title>
+  <title> 位运算知识整理 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +247,7 @@
             
             
               
-                Android studio解决gradle下载慢的问题
+                位运算知识整理
               
             
           </h1>
@@ -255,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-23T20:10:12+08:00" content="2016-03-23">
-              2016-03-23
+            <time itemprop="dateCreated" datetime="2016-09-05T23:42:47+08:00" content="2016-09-05">
+              2016-09-05
             </time>
           </span>
 
@@ -269,8 +273,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -285,8 +289,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/23/20160323-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/23/20160323-01/" itemprop="commentsCount"></span>
+                <a href="/2016/09/05/20160905-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/05/20160905-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,9 +312,12 @@
       
 
       
-        <p>gradle下载被墙是个很恶心的事情，半天构建不出来，所以解决下载慢，要不翻墙，要不只能引用一些国内的景象库来构建。我选择使用shadowsocks走代理的方法，shadowsocks怎么用我不再赘述，假设你已经配置好了shadowsocks并已经在浏览器中可以成功运行了。</p>
-<p>那只需在Android studio中，setting 的 http proxy下。如图配置即可</p>
-<img src="/2016/03/23/20160323-01/example.jpg" alt="This is an example image" title="This is an example image">
+        <p>无论是算法题当中还是面试题当中经常能见到有关位运算的知识点。所以特地整理一下，来攻破它。</p>
+<p>在c语言中&amp;表示与，|表示或，^表示异或。~代表取反，&lt;&lt;代表左移，&gt;&gt;代表右移。</p>
+<p>注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是<strong>算术右移</strong>，高位补符号位。一种是<strong>逻辑右移</strong>，高位补0.微软的vc6.0和vs2008都是算数右移。</p>
+<p>常用的位运算有一下几种小技巧。</p>
+<h3 id="位运算技巧"><a href="#位运算技巧" class="headerlink" title="位运算技巧"></a>位运算技巧</h3><h4 id="判断奇偶"><a href="#判断奇偶" class="headerlink" title="判断奇偶"></a>判断奇偶</h4><p>if(a&amp;1)</p>
+<h4 id="交换两数"><a href="#交换两数" class="headerlink" title="交换两数"></a>交换两数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a ^= b</span><br><span class="line">b ^= a</span><br><span class="line">a ^= b</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -324,7 +331,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/软件使用/" rel="tag">#软件使用</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -333,17 +340,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/20/project_learning/" rel="next" title="安卓实战学习记录01">
-                <i class="fa fa-chevron-left"></i> 安卓实战学习记录01
+              <a href="/2016/08/10/20160810-01/" rel="next" title="PAT试前准备">
+                <i class="fa fa-chevron-left"></i> PAT试前准备
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/20160324-01/" rel="prev" title="java泛型的一些理解与笔记">
-                java泛型的一些理解与笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -369,8 +372,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/23/20160323-01/"
-           data-title="Android studio解决gradle下载慢的问题" data-url="http://yoursite.com/2016/03/23/20160323-01/">
+      <div class="ds-thread" data-thread-key="2016/09/05/20160905-01/"
+           data-title="位运算知识整理" data-url="http://yoursite.com/2016/09/05/20160905-01/">
       </div>
     
   </div>
@@ -484,7 +487,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算技巧"><span class="nav-number">1.</span> <span class="nav-text">位运算技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断奇偶"><span class="nav-number">1.1.</span> <span class="nav-text">判断奇偶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换两数"><span class="nav-number">1.2.</span> <span class="nav-text">交换两数</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
