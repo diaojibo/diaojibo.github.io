@@ -69,7 +69,7 @@
 在c语言中&amp;amp;表示与，|表示或，^表示异或。~代表取反，&amp;lt;&amp;lt;代表左移，&amp;gt;&amp;gt;代表右移。
 注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是算术右移，高位补符号位。一种是逻辑右移，高位补0.微软的vc6.0和vs2008都是算数右移。
 常用的位运算有一下几种小技巧">
-<meta property="og:updated_time" content="2016-09-05T16:19:21.719Z">
+<meta property="og:updated_time" content="2016-09-06T03:19:43.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算知识整理">
 <meta name="twitter:description" content="无论是算法题当中还是面试题当中经常能见到有关位运算的知识点。所以特地整理一下，来攻破它。
@@ -316,7 +316,7 @@
 <p>在c语言中&amp;表示与，|表示或，^表示异或。~代表取反，&lt;&lt;代表左移，&gt;&gt;代表右移。</p>
 <p>注意左移的时候是低位全部补0的。但是右移的话要注意了，分为两种，一种是<strong>算术右移</strong>，高位补符号位。一种是<strong>逻辑右移</strong>，高位补0.微软的vc6.0和vs2008都是算数右移。</p>
 <p>常用的位运算有一下几种小技巧。</p>
-<h3 id="位运算技巧"><a href="#位运算技巧" class="headerlink" title="位运算技巧"></a>位运算技巧</h3><h4 id="判断奇偶"><a href="#判断奇偶" class="headerlink" title="判断奇偶"></a>判断奇偶</h4><p>if(a&amp;1)</p>
+<h3 id="位运算技巧"><a href="#位运算技巧" class="headerlink" title="位运算技巧"></a>位运算技巧</h3><h4 id="判断奇偶"><a href="#判断奇偶" class="headerlink" title="判断奇偶"></a>判断奇偶</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a&amp;<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <h4 id="交换两数"><a href="#交换两数" class="headerlink" title="交换两数"></a>交换两数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a ^= b</span><br><span class="line">b ^= a</span><br><span class="line">a ^= b</span><br></pre></td></tr></table></figure>
       
     </div>
