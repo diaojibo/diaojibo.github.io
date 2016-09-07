@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -57,46 +57,31 @@
 
 
 
-<meta name="description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
+<meta name="description" content="树状数组，是一种用来高效计算数组前缀和，并且动态更新的一种数据结构。支持在O(logn)的时间内查询和动态更新。
+概念首先我们知道树状数组跟线段树很像。用来记录数组里一些区间和，它遵循的就是一个规律。 tree[idx]=f[idx-2^r +1]+…+f[idx]。r记为idx的二进制表示中最右边的1后面0的个数
 
 
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
+上面是从网上节选的图，f数组是原数组。c数组是1-i的和。tree就是我们所说">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java里的可达性和各种引用">
-<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-02/index.html">
+<meta property="og:title" content="树状数组知识点">
+<meta property="og:url" content="http://yoursite.com/2016/09/07/20160907-02/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
+<meta property="og:description" content="树状数组，是一种用来高效计算数组前缀和，并且动态更新的一种数据结构。支持在O(logn)的时间内查询和动态更新。
+概念首先我们知道树状数组跟线段树很像。用来记录数组里一些区间和，它遵循的就是一个规律。 tree[idx]=f[idx-2^r +1]+…+f[idx]。r记为idx的二进制表示中最右边的1后面0的个数
 
 
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
-<meta property="og:updated_time" content="2016-03-29T12:39:46.000Z">
+上面是从网上节选的图，f数组是原数组。c数组是1-i的和。tree就是我们所说">
+<meta property="og:image" content="http://yoursite.com/2016/09/07/20160907-02/form.png">
+<meta property="og:image" content="http://yoursite.com/2016/09/07/20160907-02/form2.png">
+<meta property="og:updated_time" content="2016-09-07T16:46:35.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java里的可达性和各种引用">
-<meta name="twitter:description" content="最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。
-可达性java虚拟机中有五个级别的可达性。
-
-强可达
-
-强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。
-
-软可达
+<meta name="twitter:title" content="树状数组知识点">
+<meta name="twitter:description" content="树状数组，是一种用来高效计算数组前缀和，并且动态更新的一种数据结构。支持在O(logn)的时间内查询和动态更新。
+概念首先我们知道树状数组跟线段树很像。用来记录数组里一些区间和，它遵循的就是一个规律。 tree[idx]=f[idx-2^r +1]+…+f[idx]。r记为idx的二进制表示中最右边的1后面0的个数
 
 
- 如果一个对象没有强可达性，但是它可以通过一个软引用(soft ref">
+上面是从网上节选的图，f数组是原数组。c数组是1-i的和。tree就是我们所说">
+<meta name="twitter:image" content="http://yoursite.com/2016/09/07/20160907-02/form.png">
 
 
 
@@ -128,7 +113,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java里的可达性和各种引用 | 韬光养晦 </title>
+  <title> 树状数组知识点 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +253,7 @@
             
             
               
-                java里的可达性和各种引用
+                树状数组知识点
               
             
           </h1>
@@ -280,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-24T20:17:39+08:00" content="2016-03-24">
-              2016-03-24
+            <time itemprop="dateCreated" datetime="2016-09-07T23:00:35+08:00" content="2016-09-07">
+              2016-09-07
             </time>
           </span>
 
@@ -294,8 +279,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -310,8 +295,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/24/20160324-02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-02/" itemprop="commentsCount"></span>
+                <a href="/2016/09/07/20160907-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/20160907-02/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,55 +318,15 @@
       
 
       
-        <p>最近在学习Android中遇到了图片加载内存溢出的问题，所以顺便学习java虚拟机里的一些内存回收机制。</p>
-<h3 id="可达性"><a href="#可达性" class="headerlink" title="可达性"></a>可达性</h3><p>java虚拟机中有五个级别的可达性。</p>
-<ul>
-<li>强可达</li>
-</ul>
-<p>强可达所使用的对象，通常而言不会被GC回收。那些直接被new出来使用的对象就是强可达， 一个对象可以被一些线程直接使用而不通过其他引用对象，就是强可达。</p>
-<ul>
-<li>软可达</li>
-</ul>
-<blockquote>
-<p> 如果一个对象没有强可达性，但是它可以通过一个软引用(soft reference.)来使用，那么它就具有软可达性。只有当系统需要更多内存时，GC才会回收具有软可达性的对象。在内存不足前，GC保证一定回收软可达的对象。</p>
-</blockquote>
-<p>就是说，软引用对象的回收去决定于不同版本JVM的回收机制，回收之后软引用会返回null。</p>
-<ul>
-<li>弱可达</li>
-</ul>
-<blockquote>
-<p>如果一个对象既没有强可达性，也没有软可达性，但是它可以通过一个弱引用(weak reference)来使用，那么他就具有弱可达性。当弱引用指向的弱可达对象没有其他的引用，那么这个对象就会被回收。</p>
-</blockquote>
-<ul>
-<li>虚可达<blockquote>
-<p>如果一个对象既没有强可达性，也没有软可达性、弱可达性，他已经被终结（finalized），并且有一些虚引用（phantom reference）指向它，那么它就具有虚可达性。</p>
-</blockquote>
-</li>
-</ul>
-<p>就是说虚引用指向的对象已经被终结了，永远返回null。</p>
-<ul>
-<li>不可达<blockquote>
-<p>当一个对象不能通过以上的方式指向，那么这个对象就变得不可达，并因此适合被回收。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="引用的类型"><a href="#引用的类型" class="headerlink" title="引用的类型"></a>引用的类型</h3><p>JDK1.2之后，对象引用被分为四个级别。</p>
-<ul>
-<li>强引用</li>
-</ul>
-<p>垃圾回收器不回收强引用，如若内存空间不足，jvm将会OOM错误。</p>
-<ul>
-<li>软引用</li>
-</ul>
-<p>够空间就不回收，不够就回。可用于实现内存敏感的高速缓存</p>
-<ul>
-<li>弱引用</li>
-</ul>
-<p>对象若是有弱引用，那将具有更短的生命周期，一旦它被扫描到，不管内存空间是否充足都会被回收，不过由于垃圾回收器是个级别很低的线程，所以不一定会很快发现弱引用对象。</p>
-<ul>
-<li>虚引用</li>
-</ul>
-<p>形同虚设，并不决定对象生命周期，主要用来跟踪对象被GC回收的活动。</p>
+        <p>树状数组，是一种用来高效计算数组前缀和，并且动态更新的一种数据结构。支持在O(logn)的时间内查询和动态更新。</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>首先我们知道树状数组跟线段树很像。用来记录数组里一些区间和，它遵循的就是一个规律。 tree[idx]=f[idx-2^r +1]+…+f[idx]。r记为idx的二进制表示中最右边的1后面0的个数</p>
+<img src="/2016/09/07/20160907-02/form.png" alt="This is an example image" title="This is an example image">
+<img src="/2016/09/07/20160907-02/form2.png" alt="This is an example image" title="This is an example image">
+<p>上面是从网上节选的图，f数组是原数组。c数组是1-i的和。tree就是我们所说的树状数组。由此可得，树状数组中每一个位置的含义，tree[i]所代表的区间和区域为:从i二进制形式减去最右边的1然后再加1开始直接加到i本身。[i-lowbit(i)…..i]</p>
+<h3 id="构建过程"><a href="#构建过程" class="headerlink" title="构建过程"></a>构建过程</h3><h4 id="lowbit函数"><a href="#lowbit函数" class="headerlink" title="lowbit函数"></a>lowbit函数</h4><p>这个函数用来求二进制形式数中，最右边的1所在位置所代表的数值。<br>可以经过证明，以下方法可以快速找出最右边的1所在的位置所代表的数值。<br>比如1100 = 12<br>在计算机中负数是补码取反加1<br>因此 -12 = 0011+1 = 0100<br>1100 &amp; 0100 = 0100<br>所以lowbit函数求得最右边置1时的数字为4</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="构建树状数组"><a href="#构建树状数组" class="headerlink" title="构建树状数组"></a>构建树状数组</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span><br><span class="line"></span>&#123; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=MAX_N;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        BIT[i]=A[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i<span class="number">-1</span>; j&gt;i-lowbit(i); j--)</span><br><span class="line">            BIT[i]+=A[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="动态更新"><a href="#动态更新" class="headerlink" title="动态更新"></a>动态更新</h4><p>假设现在原数组A[i]的值更新了，变化了delta。则所对应覆盖的区域都要加上这个值。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">edit</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> delta)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= MAX_N; j += lowbit(j))</span><br><span class="line">        BIT[j] += delta;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -396,7 +341,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -405,17 +350,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/24/20160324-01/" rel="next" title="java泛型的一些理解与笔记">
-                <i class="fa fa-chevron-left"></i> java泛型的一些理解与笔记
+              <a href="/2016/09/07/20160907-01/" rel="next" title="经典巧妙面试(算法)题整理">
+                <i class="fa fa-chevron-left"></i> 经典巧妙面试(算法)题整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/20160324-03/" rel="prev" title="图片异步加载">
-                图片异步加载 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,8 +382,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/24/20160324-02/"
-           data-title="java里的可达性和各种引用" data-url="http://yoursite.com/2016/03/24/20160324-02/">
+      <div class="ds-thread" data-thread-key="2016/09/07/20160907-02/"
+           data-title="树状数组知识点" data-url="http://yoursite.com/2016/09/07/20160907-02/">
       </div>
     
   </div>
@@ -556,7 +497,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#可达性"><span class="nav-number">1.</span> <span class="nav-text">可达性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用的类型"><span class="nav-number">2.</span> <span class="nav-text">引用的类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建过程"><span class="nav-number">2.</span> <span class="nav-text">构建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lowbit函数"><span class="nav-number">2.1.</span> <span class="nav-text">lowbit函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建树状数组"><span class="nav-number">2.2.</span> <span class="nav-text">构建树状数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态更新"><span class="nav-number">2.3.</span> <span class="nav-text">动态更新</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
