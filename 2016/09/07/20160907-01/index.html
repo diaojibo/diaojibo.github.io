@@ -67,7 +67,7 @@
 <meta property="og:description" content="在成对的数字中寻找只出现过一次的数字这题被编程之美收录了，数字全部异或一遍就可以了。成对的数字互相异或都为0了。
 求1的个数https://www.patest.cn/contests/pat-a-practise/1049
 一道经典问题，给出N。让你求1-N中的所有数字里出现1的个数。一开始做的时候被卡了很久。归纳分析很容易出错。正确的方法便是用归纳的思想每一位每一位的分析。比如1-654中1出">
-<meta property="og:updated_time" content="2016-09-07T10:09:56.225Z">
+<meta property="og:updated_time" content="2016-09-08T08:22:41.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="经典巧妙面试(算法)题整理">
 <meta name="twitter:description" content="在成对的数字中寻找只出现过一次的数字这题被编程之美收录了，数字全部异或一遍就可以了。成对的数字互相异或都为0了。
@@ -315,6 +315,10 @@
 <p>(归纳得)<br>每一位:此位的位数乘以他前面的数字。比如6154，6是千位，前面没数字，所以是0，对于十位5，前面有61所以是61.对于4前面是615所以得615，设现在得到的这个数字为K.得到这个数字以后还没完。再回到那一位的数字本身：小于1 等于1 大于1.小于1则不处理，大于1，则可知这个位置上出现的1的个数是（k+1）乘以位数。如果等于1，则是 K*位数加上后面的数字+1。</p>
 <p>举个例子 6154<br>千位上的1：（0+1）<em>1000<br>百位上的1： （6）</em>100+54+1<br>十位上的1：（61+1）<em>10<br>个位上的1： （615+1）</em>1<br>总计 2891</p>
 <p>方法是归纳总结出来的，所以说遇到此类题一定要淡定分析方法，寻找规律</p>
+<h3 id="求逆序数"><a href="#求逆序数" class="headerlink" title="求逆序数"></a>求逆序数</h3><p>564213 某书对比如<5,4> 前面的数比后面的大就是逆序数对<br>求逆序数最通常的方法是爆搜。O(n^2)的效率。<br>还有两种方法是可以达到nlogn效率。</5,4></p>
+<p><strong>一种是归并排序思想。</strong></p>
+<p>将一个序列分为两个序列(req1 req2)来求逆序数对，假定分出来的每个逆序数对都已经求号并且累加，那么如果存在逆序数对,则第一个数在req1中，第二个在req2中。如若发现req1中的某数大于req2，则计数器要进行累加。增量是第一个数组剩余的数据个数，因为这些数也肯定都比req2中的那个数大。</p>
+<p><strong>当然还可以使用树状数组</strong><br>动态更新一个标记数组，标记每个数字的出现次数。然后动态添加数，每添加一个数，就算一下大于这个数的数有多少(动态求和计算)。但是缺点是万一遇到序列里有很大的数，则要损费巨大空间，标记数组需要囊括所有可能出现的数。</p>
 
       
     </div>
@@ -489,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在成对的数字中寻找只出现过一次的数字"><span class="nav-number">1.</span> <span class="nav-text">在成对的数字中寻找只出现过一次的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求1的个数"><span class="nav-number">2.</span> <span class="nav-text">求1的个数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在成对的数字中寻找只出现过一次的数字"><span class="nav-number">1.</span> <span class="nav-text">在成对的数字中寻找只出现过一次的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求1的个数"><span class="nav-number">2.</span> <span class="nav-text">求1的个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求逆序数"><span class="nav-number">3.</span> <span class="nav-text">求逆序数</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
