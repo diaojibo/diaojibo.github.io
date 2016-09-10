@@ -67,7 +67,7 @@
 <meta property="og:description" content="此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。
 找出某两点间所有的最短路径众所周知，最短路径的经典算法有那几种。比如Floyd算法，dij算法，spfa算法等。其中最为经典的也就算是dij算法了。但是现在有一个需求是需要找出某原点到某目的点的所有最短路径。
 而最朴素的dij算法，只能求得单源最短路径的某个值。通过网上查阅论文可以知道，有许多方法可以依据d">
-<meta property="og:updated_time" content="2016-09-07T14:58:35.930Z">
+<meta property="og:updated_time" content="2016-09-09T08:42:17.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT试前准备">
 <meta name="twitter:description" content="此博客用于记录准备PAT比赛过程中所复习到的一些经典算法以及一些思考。不定期更新一些思路。
@@ -337,7 +337,11 @@
 <p>起初遇到这题时候，我第一个想法是动规。但是且不说时间效率不达标，由于汽车到达每个加油站时候的所剩油量不一定是整数，这就导致了根据整数来动规的解法是错误的。所以只能老老实实用贪心来解决了。那么怎么贪心呢。</p>
 <p>首先我们来假象我们现在处于一个加油站，且油量为0.这时我们必须要加油才能继续往前跑。那么我们应该加多少油呢，答案是可能的范围内加到下一个油费更便宜的加油站为止，而且是刚刚好加到那个加油站。试想一下，如果我们途中在更贵的加油站加油了，那显然还不如在一开始的地方就加好，否则就浪费了不是，而假设我们不在下一个更便宜的地方加油，那继续往前看用的是起点的油费，显然也是更贵。所以我们应该采取的贪心策略是，刚好在极限范围内加到下一个更便宜的加油点，假设更便宜的加油点不存在，就在起点加满然后跑到下一个范围内最便宜的加油站，再来采取同样的策略。流程化之后便是，我如果可以开到下一个更便宜的加油点，把油的数量加到刚好可以开到那里。如果范围内的加油点都更贵，那就加满油开到范围内便宜的地方。</p>
 <p>这题给人的启示是，关注数据量和限制时间。增加对贪心算法的敏感度。</p>
-<h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p>树状数组的知识点也是蛮重要的。这一块知识我专门开一贴来说明吧！</p>
+<h3 id="树相关"><a href="#树相关" class="headerlink" title="树相关"></a>树相关</h3><p>树的知识点也是蛮重要的。这一块知识我专门开一贴来说明吧！</p>
+<p>树状数组那些结构也会单独开贴记录。</p>
+<p>刷题过程中经常会树的一些小知识点给困扰到，归根结底啊也是对树知识的掌握不熟练。这里来记录一些遇到的问题。</p>
+<p>之前在环的问题里提到了树必定是n-1条边的性质。</p>
+<p><strong>n个节点完全二叉树只有一种</strong> 做题时也被</p>
 <h3 id="经典题目记录-一"><a href="#经典题目记录-一" class="headerlink" title="经典题目记录(一)"></a>经典题目记录(一)</h3><h4 id="数字片段重组"><a href="#数字片段重组" class="headerlink" title="数字片段重组"></a>数字片段重组</h4><p><a><a href="https://www.patest.cn/contests/pat-a-practise/1038" target="_blank" rel="external">https://www.patest.cn/contests/pat-a-practise/1038</a></a></p>
 <p>本题出自pat1308，大概意思就是给你一些数字的片段，怎么样重组起来可以使得拼接起来的数字是最小的。比如 01 35 两片段重组，0135显然比3501要小。</p>
 <p>起初刚遇到这题也是往贪心的思路去思考。显然字符串排序越小的，越应该排在前面。但是这也有个很致命的问题，比如32和322，哪个应该放在前面呢。如果单纯按照字符串排序，32长度小，是322的前缀，所以应该排前面。然而实际上并非如此。显然0132322是比0132232要大的。那么是322排在前面吗？这时候我就会想，加入接32，如果还有一个片段是1大头或者2大头的，那么这时321X不肯定比322要优吗？</p>
@@ -454,7 +458,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -523,7 +527,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#找出某两点间所有的最短路径"><span class="nav-number">1.</span> <span class="nav-text">找出某两点间所有的最短路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据附加信息选择最优最短路"><span class="nav-number">2.</span> <span class="nav-text">根据附加信息选择最优最短路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找出一幅图中连通分量的数目"><span class="nav-number">3.</span> <span class="nav-text">找出一幅图中连通分量的数目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求图中是否存在环"><span class="nav-number">4.</span> <span class="nav-text">求图中是否存在环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图"><span class="nav-number">4.1.</span> <span class="nav-text">无向图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类拓扑排序法"><span class="nav-number">4.1.1.</span> <span class="nav-text">类拓扑排序法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dfs算法"><span class="nav-number">4.1.2.</span> <span class="nav-text">dfs算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向图"><span class="nav-number">4.2.</span> <span class="nav-text">有向图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#拓扑排序法"><span class="nav-number">4.2.1.</span> <span class="nav-text">拓扑排序法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改进的dfs算法"><span class="nav-number">4.2.2.</span> <span class="nav-text">改进的dfs算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同进制的素数误区"><span class="nav-number">5.</span> <span class="nav-text">不同进制的素数误区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带权值的汽车加油问题"><span class="nav-number">6.</span> <span class="nav-text">带权值的汽车加油问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树状数组"><span class="nav-number">7.</span> <span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经典题目记录-一"><span class="nav-number">8.</span> <span class="nav-text">经典题目记录(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字片段重组"><span class="nav-number">8.1.</span> <span class="nav-text">数字片段重组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求1的个数"><span class="nav-number">8.2.</span> <span class="nav-text">求1的个数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#找出某两点间所有的最短路径"><span class="nav-number">1.</span> <span class="nav-text">找出某两点间所有的最短路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据附加信息选择最优最短路"><span class="nav-number">2.</span> <span class="nav-text">根据附加信息选择最优最短路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找出一幅图中连通分量的数目"><span class="nav-number">3.</span> <span class="nav-text">找出一幅图中连通分量的数目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求图中是否存在环"><span class="nav-number">4.</span> <span class="nav-text">求图中是否存在环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图"><span class="nav-number">4.1.</span> <span class="nav-text">无向图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类拓扑排序法"><span class="nav-number">4.1.1.</span> <span class="nav-text">类拓扑排序法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dfs算法"><span class="nav-number">4.1.2.</span> <span class="nav-text">dfs算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向图"><span class="nav-number">4.2.</span> <span class="nav-text">有向图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#拓扑排序法"><span class="nav-number">4.2.1.</span> <span class="nav-text">拓扑排序法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改进的dfs算法"><span class="nav-number">4.2.2.</span> <span class="nav-text">改进的dfs算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同进制的素数误区"><span class="nav-number">5.</span> <span class="nav-text">不同进制的素数误区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带权值的汽车加油问题"><span class="nav-number">6.</span> <span class="nav-text">带权值的汽车加油问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树相关"><span class="nav-number">7.</span> <span class="nav-text">树相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经典题目记录-一"><span class="nav-number">8.</span> <span class="nav-text">经典题目记录(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字片段重组"><span class="nav-number">8.1.</span> <span class="nav-text">数字片段重组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求1的个数"><span class="nav-number">8.2.</span> <span class="nav-text">求1的个数</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
