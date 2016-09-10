@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -57,19 +57,31 @@
 
 
 
-<meta name="description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="description" content="本帖不定期更新一些本人所遇到树的坑。
+树的一些性质n个节点完全二叉树只有一种（显然的，但是有一次没想起来）
+树必定是n-1条边
+树状数组用以动态更新前缀和，已另外开贴说明。
+平衡树AVL树经典平衡树, 所有操作的最坏复杂度都是O(logn)的。
+二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中的堆内存和栈内存">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/20160129-01/index.html">
+<meta property="og:title" content="树的知识点记录">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/20160909-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
-<meta property="og:updated_time" content="2016-03-16T13:10:53.000Z">
+<meta property="og:description" content="本帖不定期更新一些本人所遇到树的坑。
+树的一些性质n个节点完全二叉树只有一种（显然的，但是有一次没想起来）
+树必定是n-1条边
+树状数组用以动态更新前缀和，已另外开贴说明。
+平衡树AVL树经典平衡树, 所有操作的最坏复杂度都是O(logn)的。
+二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。">
+<meta property="og:updated_time" content="2016-09-09T12:08:18.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中的堆内存和栈内存">
-<meta name="twitter:description" content="java中内存也是大致有栈内存和堆内存当代码中定义一些基本类型变量或者引用变量，虚拟机会在栈中分配内存然后到这个作用域结束，java会自动回收该部分内存而当你要new对象或者数组，这块内存将会在堆里分配。这块内存会有java虚拟机来自动回收。所谓的 引用变量，类似于 指针，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。
-内存分配策">
+<meta name="twitter:title" content="树的知识点记录">
+<meta name="twitter:description" content="本帖不定期更新一些本人所遇到树的坑。
+树的一些性质n个节点完全二叉树只有一种（显然的，但是有一次没想起来）
+树必定是n-1条边
+树状数组用以动态更新前缀和，已另外开贴说明。
+平衡树AVL树经典平衡树, 所有操作的最坏复杂度都是O(logn)的。
+二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。">
 
 
 
@@ -101,7 +113,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java中的堆内存和栈内存 | 韬光养晦 </title>
+  <title> 树的知识点记录 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +253,7 @@
             
             
               
-                java中的堆内存和栈内存
+                树的知识点记录
               
             
           </h1>
@@ -253,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T20:29:06+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-09-09T16:42:44+08:00" content="2016-09-09">
+              2016-09-09
             </time>
           </span>
 
@@ -267,8 +279,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -283,8 +295,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/29/20160129-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/20160129-01/" itemprop="commentsCount"></span>
+                <a href="/2016/09/09/20160909-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/20160909-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,11 +318,17 @@
       
 
       
-        <p>java中内存也是大致有<strong>栈内存</strong>和<strong>堆内存</strong><br>当代码中定义一些基本类型变量或者引用变量，虚拟机会在<strong>栈</strong>中分配内存<br>然后到这个作用域结束，java会自动回收该部分内存<br>而当你要new对象或者数组，这块内存将会在<strong>堆</strong>里分配。这块内存会有java虚拟机来自动回收。<br>所谓的 <strong>引用变量</strong>，类似于 <strong>指针</strong>，是分配在栈内存当中的，然而指向堆内存。当一个new出来的对象没有再被引用指向的时候，就会被垃圾回收器在不定时清掉。</p>
-<h2 id="内存分配策略"><a href="#内存分配策略" class="headerlink" title="内存分配策略"></a>内存分配策略</h2><h3 id="1-静态存储分配"><a href="#1-静态存储分配" class="headerlink" title="1.静态存储分配"></a>1.静态存储分配</h3><p>在编译的时候就能确定每个数据目标的存储空间，不允许可变数据结构。</p>
-<h3 id="2-栈式存储分配"><a href="#2-栈式存储分配" class="headerlink" title="2.栈式存储分配"></a>2.栈式存储分配</h3><p>编译时对程序区未知，只有到运行，在进入某一个程序区块时候，才能为其分配内存。栈式内存符合先进后出</p>
-<h3 id="3-堆式存储分配"><a href="#3-堆式存储分配" class="headerlink" title="3.堆式存储分配"></a>3.堆式存储分配</h3><p>堆中的内存无法在编译时和运行时确定，可按任意顺序分配释放</p>
-<hr>
+        <p>本帖不定期更新一些本人所遇到树的坑。</p>
+<h2 id="树的一些性质"><a href="#树的一些性质" class="headerlink" title="树的一些性质"></a>树的一些性质</h2><p><strong>n个节点完全二叉树只有一种</strong>（显然的，但是有一次没想起来）</p>
+<p><strong>树必定是n-1条边</strong></p>
+<h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><p>用以动态更新前缀和，已另外开贴说明。</p>
+<h2 id="平衡树"><a href="#平衡树" class="headerlink" title="平衡树"></a>平衡树</h2><h3 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h3><p>经典平衡树, 所有操作的最坏复杂度都是O(logn)的。</p>
+<p>二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。</p>
+<h4 id="AVL树的定义"><a href="#AVL树的定义" class="headerlink" title="AVL树的定义"></a>AVL树的定义</h4><p>通过编程实现AVL树，定义这个数据结构需要以下几个信息。节点结构如下定义</p>
+<p>1.节点的权值<br>2.左节点指针(索引)<br>3.右节点指针(索引)<br>4.这个节点的高度</p>
+<p>规定叶节点的高度为0</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node&#123;</span><br><span class="line"> Node_t left;</span><br><span class="line"> Node_t right;</span><br><span class="line"> <span class="keyword">int</span> height;</span><br><span class="line"> Type data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>插入节点时，我们一个一个节点进行插入。遇到<strong>失衡</strong>的情况，就进行旋转调整。</p>
 
       
     </div>
@@ -325,7 +343,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -334,17 +352,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/25/20160125-01/" rel="next" title="个人idea快捷键整理">
-                <i class="fa fa-chevron-left"></i> 个人idea快捷键整理
+              <a href="/2016/09/07/20160907-02/" rel="next" title="树状数组知识点">
+                <i class="fa fa-chevron-left"></i> 树状数组知识点
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/20160205-01/" rel="prev" title="java中的注解">
-                java中的注解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +384,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/29/20160129-01/"
-           data-title="java中的堆内存和栈内存" data-url="http://yoursite.com/2016/01/29/20160129-01/">
+      <div class="ds-thread" data-thread-key="2016/09/09/20160909-01/"
+           data-title="树的知识点记录" data-url="http://yoursite.com/2016/09/09/20160909-01/">
       </div>
     
   </div>
@@ -485,7 +499,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配策略"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态存储分配"><span class="nav-number">1.1.</span> <span class="nav-text">1.静态存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-栈式存储分配"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式存储分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-堆式存储分配"><span class="nav-number">1.3.</span> <span class="nav-text">3.堆式存储分配</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#树的一些性质"><span class="nav-number">1.</span> <span class="nav-text">树的一些性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树状数组"><span class="nav-number">2.</span> <span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平衡树"><span class="nav-number">3.</span> <span class="nav-text">平衡树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL树"><span class="nav-number">3.1.</span> <span class="nav-text">AVL树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AVL树的定义"><span class="nav-number">3.1.1.</span> <span class="nav-text">AVL树的定义</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
