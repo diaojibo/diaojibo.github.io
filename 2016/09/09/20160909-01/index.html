@@ -73,7 +73,8 @@
 树状数组用以动态更新前缀和，已另外开贴说明。
 平衡树AVL树经典平衡树, 所有操作的最坏复杂度都是O(logn)的。
 二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。">
-<meta property="og:updated_time" content="2016-09-09T12:08:18.539Z">
+<meta property="og:image" content="http://yoursite.com/2016/09/09/20160909-01/avl1.jpg">
+<meta property="og:updated_time" content="2016-09-10T09:11:14.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树的知识点记录">
 <meta name="twitter:description" content="本帖不定期更新一些本人所遇到树的坑。
@@ -82,6 +83,7 @@
 树状数组用以动态更新前缀和，已另外开贴说明。
 平衡树AVL树经典平衡树, 所有操作的最坏复杂度都是O(logn)的。
 二叉查找树就不用多说了，AVL树就是一个平衡的二叉查找树。avl树种，任何节点的两个子数高度差都不能超过1.增加和删除节点都需要通过旋转操作来保持平衡。">
+<meta name="twitter:image" content="http://yoursite.com/2016/09/09/20160909-01/avl1.jpg">
 
 
 
@@ -329,6 +331,8 @@
 <p>规定叶节点的高度为0</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node&#123;</span><br><span class="line"> Node_t left;</span><br><span class="line"> Node_t right;</span><br><span class="line"> <span class="keyword">int</span> height;</span><br><span class="line"> Type data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>插入节点时，我们一个一个节点进行插入。遇到<strong>失衡</strong>的情况，就进行旋转调整。</p>
+<p>失衡一共有四种情况，本质都是左右两边发生高度差大于1的情况。</p>
+<img src="/2016/09/09/20160909-01/avl1.jpg" alt="avl1.jpg" title="">
 
       
     </div>
