@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -57,55 +57,22 @@
 
 
 
-<meta name="description" content="如果一个架构符合REST原则，就称它为RESTful架构
-REST关键原则实际上REST的关键原则有
-
-为所有“事物”定义ID
-将所有事物链接在一起
-使用标准方法
-资源多重表述
-无状态通信
-
-然而基于HTTP进行总结后，可概括为以下三点。
-
-每一个URI代表一种资源
-客户端和服务端之间，传递这种资源的某种表现层（比如xml，json）
-客户端通过HTTP动词，对服务端资源进行操作，实现表现层（js">
+<meta name="description" content="最近实验室获取了26g的mysql单表数据库文件，必须要对它进行一些优化。上网查了一下有关优化mysql查询的几点。发现有一篇文章写的很好，里面我也节选一些作为记录。
+http://blog.csdn.net/bravekingzhang/article/details/19081467
+Mysql常规优化当只要一行数据时使用 LIMIT 1当你查询表的有些时候，你已经知道结果只会有一条结果，但因">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RESTful架构">
-<meta property="og:url" content="http://yoursite.com/2016/06/04/20160604-01/index.html">
+<meta property="og:title" content="优化mysql查询记录">
+<meta property="og:url" content="http://yoursite.com/2016/10/07/20161007-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="如果一个架构符合REST原则，就称它为RESTful架构
-REST关键原则实际上REST的关键原则有
-
-为所有“事物”定义ID
-将所有事物链接在一起
-使用标准方法
-资源多重表述
-无状态通信
-
-然而基于HTTP进行总结后，可概括为以下三点。
-
-每一个URI代表一种资源
-客户端和服务端之间，传递这种资源的某种表现层（比如xml，json）
-客户端通过HTTP动词，对服务端资源进行操作，实现表现层（js">
-<meta property="og:updated_time" content="2016-06-14T02:17:01.000Z">
+<meta property="og:description" content="最近实验室获取了26g的mysql单表数据库文件，必须要对它进行一些优化。上网查了一下有关优化mysql查询的几点。发现有一篇文章写的很好，里面我也节选一些作为记录。
+http://blog.csdn.net/bravekingzhang/article/details/19081467
+Mysql常规优化当只要一行数据时使用 LIMIT 1当你查询表的有些时候，你已经知道结果只会有一条结果，但因">
+<meta property="og:updated_time" content="2016-10-07T09:10:26.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RESTful架构">
-<meta name="twitter:description" content="如果一个架构符合REST原则，就称它为RESTful架构
-REST关键原则实际上REST的关键原则有
-
-为所有“事物”定义ID
-将所有事物链接在一起
-使用标准方法
-资源多重表述
-无状态通信
-
-然而基于HTTP进行总结后，可概括为以下三点。
-
-每一个URI代表一种资源
-客户端和服务端之间，传递这种资源的某种表现层（比如xml，json）
-客户端通过HTTP动词，对服务端资源进行操作，实现表现层（js">
+<meta name="twitter:title" content="优化mysql查询记录">
+<meta name="twitter:description" content="最近实验室获取了26g的mysql单表数据库文件，必须要对它进行一些优化。上网查了一下有关优化mysql查询的几点。发现有一篇文章写的很好，里面我也节选一些作为记录。
+http://blog.csdn.net/bravekingzhang/article/details/19081467
+Mysql常规优化当只要一行数据时使用 LIMIT 1当你查询表的有些时候，你已经知道结果只会有一条结果，但因">
 
 
 
@@ -137,7 +104,7 @@ REST关键原则实际上REST的关键原则有
     margin-top: 50px;
   }
 </style>
-  <title> RESTful架构 | 韬光养晦 </title>
+  <title> 优化mysql查询记录 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +244,7 @@ REST关键原则实际上REST的关键原则有
             
             
               
-                RESTful架构
+                优化mysql查询记录
               
             
           </h1>
@@ -289,8 +256,8 @@ REST关键原则实际上REST的关键原则有
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-04T00:34:44+08:00" content="2016-06-04">
-              2016-06-04
+            <time itemprop="dateCreated" datetime="2016-10-07T15:36:05+08:00" content="2016-10-07">
+              2016-10-07
             </time>
           </span>
 
@@ -303,8 +270,8 @@ REST关键原则实际上REST的关键原则有
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -319,8 +286,8 @@ REST关键原则实际上REST的关键原则有
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/04/20160604-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/20160604-01/" itemprop="commentsCount"></span>
+                <a href="/2016/10/07/20161007-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/07/20161007-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,22 +309,24 @@ REST关键原则实际上REST的关键原则有
       
 
       
-        <p>如果一个架构符合REST原则，就称它为RESTful架构</p>
-<h3 id="REST关键原则"><a href="#REST关键原则" class="headerlink" title="REST关键原则"></a>REST关键原则</h3><p>实际上REST的关键原则有</p>
-<ul>
-<li>为所有“事物”定义ID</li>
-<li>将所有事物链接在一起</li>
-<li>使用标准方法</li>
-<li>资源多重表述</li>
-<li>无状态通信</li>
-</ul>
-<p>然而基于HTTP进行总结后，可概括为以下三点。</p>
-<ul>
-<li>每一个URI代表一种资源</li>
-<li>客户端和服务端之间，传递这种资源的某种表现层（比如xml，json）</li>
-<li>客户端通过HTTP动词，对服务端资源进行操作，实现表现层（json，xml）状态转化。</li>
-</ul>
-<p>基于RESTful 架构的API是目前比较成熟的一套互联网应用程序API设计理论，其概念必须掌握。</p>
+        <p>最近实验室获取了26g的mysql单表数据库文件，必须要对它进行一些优化。上网查了一下有关优化mysql查询的几点。发现有一篇文章写的很好，里面我也节选一些作为记录。</p>
+<p><a><a href="http://blog.csdn.net/bravekingzhang/article/details/19081467" target="_blank" rel="external">http://blog.csdn.net/bravekingzhang/article/details/19081467</a></a></p>
+<h2 id="Mysql常规优化"><a href="#Mysql常规优化" class="headerlink" title="Mysql常规优化"></a>Mysql常规优化</h2><h3 id="当只要一行数据时使用-LIMIT-1"><a href="#当只要一行数据时使用-LIMIT-1" class="headerlink" title="当只要一行数据时使用 LIMIT 1"></a>当只要一行数据时使用 LIMIT 1</h3><p>当你查询表的有些时候，你已经知道结果只会有一条结果，但因为你可能需要去fetch游标，或是你也许会去检查返回的记录数。</p>
+<p>在这种情况下，加上 LIMIT 1 可以增加性能。这样一样，MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查少下一条符合记录的数据。</p>
+<h3 id="为搜索字段建索引"><a href="#为搜索字段建索引" class="headerlink" title="为搜索字段建索引"></a>为搜索字段建索引</h3><p>为某个字段建立索引排序，能大大提升速度。</p>
+<h3 id="在Join表的时候使用相当类型的例，并将其索引"><a href="#在Join表的时候使用相当类型的例，并将其索引" class="headerlink" title="在Join表的时候使用相当类型的例，并将其索引"></a>在Join表的时候使用相当类型的例，并将其索引</h3><p>如果你的应用程序有很多 JOIN 查询，你应该确认两个表中Join的字段是被建过索引的。这样，MySQL内部会启动为你优化Join的SQL语句的机制。</p>
+<h3 id="避免-SELECT"><a href="#避免-SELECT" class="headerlink" title="避免 SELECT *"></a>避免 SELECT *</h3><p>从数据库里读出越多的数据，那么查询就会变得越慢。并且，如果你的数据库服务器和WEB服务器是两台独立的服务器的话，这还会增加网络传输的负载。</p>
+<h3 id="垂直分割"><a href="#垂直分割" class="headerlink" title="垂直分割"></a>垂直分割</h3><p>“垂直分割”是一种把数据库中的表按列变成几张表的方法，这样可以降低表的复杂度和字段的数目，从而达到优化的目的。</p>
+<h3 id="选择正确的存储引擎"><a href="#选择正确的存储引擎" class="headerlink" title="选择正确的存储引擎"></a>选择正确的存储引擎</h3><p>数据的大小，是一个影响你选择什么样存储引擎的重要因素，大尺寸的数据集趋向于选择InnoDB方式，因为其支持事务处理和故障恢复。数据库的在小 决定了故障恢复的时间长短，InnoDB可以利用事务日志进行数据恢复，这会比较快。而MyISAM可能会需要几个小时甚至几天来干这些事，InnoDB 只需要几分钟。</p>
+<p>您操作数据库表的习惯可能也会是一个对性能影响很大的因素。比如： COUNT() 在 MyISAM 表中会非常快，而在InnoDB 表下可能会很痛苦。而主键查询则在InnoDB下会相当相当的快，但需要小心的是如果我们的主键太长了也会导致性能问题。大批的inserts 语句在MyISAM下会快一些，但是updates 在InnoDB 下会更快一些——尤其在并发量大的时候。</p>
+<p>如果你需要全文索引，那么通常来说 MyISAM是好的选择，因为这是系统内建的，然而，我们其实并不会经常地去测试两百万行记录。所以，就算是慢一点，我们可以通过使用Sphinx从 InnoDB中获得全文索引。</p>
+<h2 id="mysql分表和表分区"><a href="#mysql分表和表分区" class="headerlink" title="mysql分表和表分区"></a>mysql分表和表分区</h2><p>日常开发中我们经常会遇到大表的情况，所谓的大表是指存储了百万级乃至千万级条记录的表。这样的表过于庞大，导致数据库在查询和插入的时候耗时太长，性能低下，如果涉及联合查询的情况，性能会更加糟糕。分表和表分区的目的就是减少数据库的负担，提高数据库的效率，通常点来讲就是提高表的增删改查效率。</p>
+<h3 id="分表"><a href="#分表" class="headerlink" title="分表"></a>分表</h3><p>分表是将一个大表按照一定的规则分解成多张具有独立存储空间的实体表，我们可以称为子表，每个表都对应三个文件，MYD数据文件，.MYI索引文件，.frm表结构文件。这些子表可以分布在同一块磁盘上，也可以在不同的机器上。app读写的时候根据事先定义好的规则得到对应的子表名，然后去操作它。</p>
+<h4 id="做mysql集群，例如：利用mysql-cluster-，mysql-proxy，mysql-replication，drdb等等"><a href="#做mysql集群，例如：利用mysql-cluster-，mysql-proxy，mysql-replication，drdb等等" class="headerlink" title="做mysql集群，例如：利用mysql cluster ，mysql proxy，mysql replication，drdb等等"></a>做mysql集群，例如：利用mysql cluster ，mysql proxy，mysql replication，drdb等等</h4><p>为一个数据库减轻负担，说白了就是减少sql排队队列中的sql的数量，举个例子：有10个sql请求，如果放在一个数据库服务器的排队队列中，他要等很长时间，如果把这10个sql请求，分配到5个数据库服务器的排队队列中，一个数据库服务器的队列中只有2个，这样等待时间是不是大大的缩短了呢？这已经很明显了。</p>
+<h4 id="预估并且进行垂直分表"><a href="#预估并且进行垂直分表" class="headerlink" title="预估并且进行垂直分表"></a>预估并且进行垂直分表</h4><p>论坛里面发表帖子的表，时间长了这张表肯定很大，几十万，几百万都有可能。 聊天室里面信息表，几十个人在一起一聊一个晚上，时间长了，这张表的数据肯定很大。像这样的情况很多。所以这种能预估出来的大数据量表，我们就事先分出个N个表，这个N是多少，根据实际情况而定。以聊天信息表为例：<br>我事先建100个这样的表，message_00,message_01,message_02……….message_98,message_99.然后根据用户的ID来判断这个用户的聊天信息放到哪张表里面，你可以用hash的方式来获得，可以用求余的方式来获得，方法很多，各人想各人的吧。（用hash来分表）</p>
+<h4 id="利用merge存储引擎来实现分表"><a href="#利用merge存储引擎来实现分表" class="headerlink" title="利用merge存储引擎来实现分表"></a>利用merge存储引擎来实现分表</h4><p>merge分表，分为主表和子表，主表类似于一个壳子，逻辑上封装了子表，实际上数据都是存储在子表中的。</p>
+<p>我们可以通过主表插入和查询数据，如果清楚分表规律，也可以直接操作子表。</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p>分区和分表相似，都是按照规则分解表。不同在于分表将大表分解为若干个独立的实体表，而分区是将数据分段划分在多个位置存放，可以是同一块磁盘也可以在不同的机器。分区后，表面上还是一张表，但数据散列到多个位置了。app读写的时候操作的还是大表名字，db自动去组织分区的数据。</p>
 
       
     </div>
@@ -372,7 +341,7 @@ REST关键原则实际上REST的关键原则有
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
           
         </div>
       
@@ -381,17 +350,13 @@ REST关键原则实际上REST的关键原则有
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/02/20160602-01/" rel="next" title="Android View的工作原理">
-                <i class="fa fa-chevron-left"></i> Android View的工作原理
+              <a href="/2016/10/07/20161006-01/" rel="next" title="前端基础技巧记录">
+                <i class="fa fa-chevron-left"></i> 前端基础技巧记录
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/14/20160714-01/" rel="prev" title="设计模式之代理模式">
-                设计模式之代理模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -417,8 +382,8 @@ REST关键原则实际上REST的关键原则有
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/04/20160604-01/"
-           data-title="RESTful架构" data-url="http://yoursite.com/2016/06/04/20160604-01/">
+      <div class="ds-thread" data-thread-key="2016/10/07/20161007-01/"
+           data-title="优化mysql查询记录" data-url="http://yoursite.com/2016/10/07/20161007-01/">
       </div>
     
   </div>
@@ -532,7 +497,7 @@ REST关键原则实际上REST的关键原则有
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#REST关键原则"><span class="nav-number">1.</span> <span class="nav-text">REST关键原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql常规优化"><span class="nav-number">1.</span> <span class="nav-text">Mysql常规优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当只要一行数据时使用-LIMIT-1"><span class="nav-number">1.1.</span> <span class="nav-text">当只要一行数据时使用 LIMIT 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为搜索字段建索引"><span class="nav-number">1.2.</span> <span class="nav-text">为搜索字段建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Join表的时候使用相当类型的例，并将其索引"><span class="nav-number">1.3.</span> <span class="nav-text">在Join表的时候使用相当类型的例，并将其索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免-SELECT"><span class="nav-number">1.4.</span> <span class="nav-text">避免 SELECT *</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直分割"><span class="nav-number">1.5.</span> <span class="nav-text">垂直分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择正确的存储引擎"><span class="nav-number">1.6.</span> <span class="nav-text">选择正确的存储引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql分表和表分区"><span class="nav-number">2.</span> <span class="nav-text">mysql分表和表分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分表"><span class="nav-number">2.1.</span> <span class="nav-text">分表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#做mysql集群，例如：利用mysql-cluster-，mysql-proxy，mysql-replication，drdb等等"><span class="nav-number">2.1.1.</span> <span class="nav-text">做mysql集群，例如：利用mysql cluster ，mysql proxy，mysql replication，drdb等等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预估并且进行垂直分表"><span class="nav-number">2.1.2.</span> <span class="nav-text">预估并且进行垂直分表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用merge存储引擎来实现分表"><span class="nav-number">2.1.3.</span> <span class="nav-text">利用merge存储引擎来实现分表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区"><span class="nav-number">2.2.</span> <span class="nav-text">分区</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
