@@ -58,25 +58,28 @@
 
 
 <meta name="description" content="本帖用于记录回顾前端基础时的一些知识点。
+position定位脱离文档流的问题http://blog.csdn.net/chen_zw/article/details/8741365
 overflow清除浮动应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围它里面的浮动的子元素(而不是叠了起来(collapsing))，假设未定义高度。就像这样：
 
-然而 IE6会自动扩展父层元素的高度，而IE8和FF等浏览器加上overflow:auto后，即可清除浮动">
+然而 IE6会">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端基础技巧记录">
 <meta property="og:url" content="http://yoursite.com/2016/10/07/20161006-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
 <meta property="og:description" content="本帖用于记录回顾前端基础时的一些知识点。
+position定位脱离文档流的问题http://blog.csdn.net/chen_zw/article/details/8741365
 overflow清除浮动应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围它里面的浮动的子元素(而不是叠了起来(collapsing))，假设未定义高度。就像这样：
 
-然而 IE6会自动扩展父层元素的高度，而IE8和FF等浏览器加上overflow:auto后，即可清除浮动">
+然而 IE6会">
 <meta property="og:image" content="http://yoursite.com/2016/10/07/20161006-01/overflow-float.png">
-<meta property="og:updated_time" content="2016-10-07T04:19:27.214Z">
+<meta property="og:updated_time" content="2016-10-08T15:33:44.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端基础技巧记录">
 <meta name="twitter:description" content="本帖用于记录回顾前端基础时的一些知识点。
+position定位脱离文档流的问题http://blog.csdn.net/chen_zw/article/details/8741365
 overflow清除浮动应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围它里面的浮动的子元素(而不是叠了起来(collapsing))，假设未定义高度。就像这样：
 
-然而 IE6会自动扩展父层元素的高度，而IE8和FF等浏览器加上overflow:auto后，即可清除浮动">
+然而 IE6会">
 <meta name="twitter:image" content="http://yoursite.com/2016/10/07/20161006-01/overflow-float.png">
 
 
@@ -315,10 +318,19 @@ overflow清除浮动应用了overflow(auto或hidden)的元素，将会扩展到�
 
       
         <p>本帖用于记录回顾前端基础时的一些知识点。</p>
-<h3 id="overflow清除浮动"><a href="#overflow清除浮动" class="headerlink" title="overflow清除浮动"></a>overflow清除浮动</h3><p>应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围它里面的浮动的子元素(而不是叠了起来(collapsing))，假设未定义高度。就像这样：</p>
+<h2 id="position定位脱离文档流的问题"><a href="#position定位脱离文档流的问题" class="headerlink" title="position定位脱离文档流的问题"></a>position定位脱离文档流的问题</h2><p><a><a href="http://blog.csdn.net/chen_zw/article/details/8741365" target="_blank" rel="external">http://blog.csdn.net/chen_zw/article/details/8741365</a></a></p>
+<h2 id="overflow清除浮动"><a href="#overflow清除浮动" class="headerlink" title="overflow清除浮动"></a>overflow清除浮动</h2><p>应用了overflow(auto或hidden)的元素，将会扩展到它需要的大小以包围它里面的浮动的子元素(而不是叠了起来(collapsing))，假设未定义高度。就像这样：</p>
 <img src="/2016/10/07/20161006-01/overflow-float.png" alt="overflow-float.png" title="">
 <p>然而 <em>IE6会自动扩展父层元素的高度，而IE8和FF等浏览器加上overflow:auto后，即可清除浮动</em></p>
-
+<h2 id="居中问题"><a href="#居中问题" class="headerlink" title="居中问题"></a>居中问题</h2><p><a><a href="http://www.w3cplus.com/css/centering-css-complete-guide.html" target="_blank" rel="external">http://www.w3cplus.com/css/centering-css-complete-guide.html</a></a></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><p>只需要使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align:center</span><br></pre></td></tr></table></figure></p>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p>设置margin的left和right为auto即可</p>
+<h4 id="多个块级元素水平排列"><a href="#多个块级元素水平排列" class="headerlink" title="多个块级元素水平排列"></a>多个块级元素水平排列</h4><p>inline-block或者flexbox显示方式</p>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><h4 id="行内元素-1"><a href="#行内元素-1" class="headerlink" title="行内元素"></a>行内元素</h4><h5 id="父元素确定高度"><a href="#父元素确定高度" class="headerlink" title="父元素确定高度"></a>父元素确定高度</h5><p>单行或者文本元素垂直居中，加入等值的padding-top和bottom，或者line-height与height相等。</p>
+<p>亦可用flexbox实现</p>
+<h5 id="幽灵元素"><a href="#幽灵元素" class="headerlink" title="幽灵元素"></a>幽灵元素</h5><p>添加伪元素实现</p>
+<h4 id="块级元素-1"><a href="#块级元素-1" class="headerlink" title="块级元素"></a>块级元素</h4><p>先定位到父元素的中间位置，用top顶下来，再用transform上移一点点50%。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -492,7 +504,7 @@ overflow清除浮动应用了overflow(auto或hidden)的元素，将会扩展到�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow清除浮动"><span class="nav-number">1.</span> <span class="nav-text">overflow清除浮动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#position定位脱离文档流的问题"><span class="nav-number">1.</span> <span class="nav-text">position定位脱离文档流的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow清除浮动"><span class="nav-number">2.</span> <span class="nav-text">overflow清除浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中问题"><span class="nav-number">3.</span> <span class="nav-text">居中问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">3.1.</span> <span class="nav-text">水平居中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素"><span class="nav-number">3.1.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素"><span class="nav-number">3.1.2.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个块级元素水平排列"><span class="nav-number">3.1.3.</span> <span class="nav-text">多个块级元素水平排列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">3.2.</span> <span class="nav-text">垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#父元素确定高度"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">父元素确定高度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#幽灵元素"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">幽灵元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">块级元素</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
