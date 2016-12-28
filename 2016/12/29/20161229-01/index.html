@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="操作系统," />
 
 
 
@@ -57,19 +57,40 @@
 
 
 
-<meta name="description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
-现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
+<meta name="description" content="文件存取文件的存取方式是由文件的性质和用户使用文件的情况决定。
+顺序存取进程在这些系统中可以从头顺序读取文件全部字节或记录
+随机存取不按照顺序，而是按照关键字来存取记录
+磁带是顺序存取。磁盘是随机存取。
+文件结构文件的逻辑结构这是从用户观点出发所观察到的文件组织形式，是用户可以直接处理的数据及其结构，独立于文件的物理特性，又称为文件组织。
+文件的逻辑结构有流式文件和记录式文件 
+
+流式文件指文件内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java泛型的一些理解与笔记">
-<meta property="og:url" content="http://yoursite.com/2016/03/24/20160324-01/index.html">
+<meta property="og:title" content="操作系统-文件系统总结">
+<meta property="og:url" content="http://yoursite.com/2016/12/29/20161229-01/index.html">
 <meta property="og:site_name" content="韬光养晦">
-<meta property="og:description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
-现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
-<meta property="og:updated_time" content="2016-03-24T14:19:58.000Z">
+<meta property="og:description" content="文件存取文件的存取方式是由文件的性质和用户使用文件的情况决定。
+顺序存取进程在这些系统中可以从头顺序读取文件全部字节或记录
+随机存取不按照顺序，而是按照关键字来存取记录
+磁带是顺序存取。磁盘是随机存取。
+文件结构文件的逻辑结构这是从用户观点出发所观察到的文件组织形式，是用户可以直接处理的数据及其结构，独立于文件的物理特性，又称为文件组织。
+文件的逻辑结构有流式文件和记录式文件 
+
+流式文件指文件内">
+<meta property="og:image" content="http://yoursite.com/link_file.png">
+<meta property="og:image" content="http://yoursite.com/02.png">
+<meta property="og:updated_time" content="2016-12-28T16:17:57.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java泛型的一些理解与笔记">
-<meta name="twitter:description" content="都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。
-现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用">
+<meta name="twitter:title" content="操作系统-文件系统总结">
+<meta name="twitter:description" content="文件存取文件的存取方式是由文件的性质和用户使用文件的情况决定。
+顺序存取进程在这些系统中可以从头顺序读取文件全部字节或记录
+随机存取不按照顺序，而是按照关键字来存取记录
+磁带是顺序存取。磁盘是随机存取。
+文件结构文件的逻辑结构这是从用户观点出发所观察到的文件组织形式，是用户可以直接处理的数据及其结构，独立于文件的物理特性，又称为文件组织。
+文件的逻辑结构有流式文件和记录式文件 
+
+流式文件指文件内">
+<meta name="twitter:image" content="http://yoursite.com/link_file.png">
 
 
 
@@ -101,7 +122,7 @@
     margin-top: 50px;
   }
 </style>
-  <title> java泛型的一些理解与笔记 | 韬光养晦 </title>
+  <title> 操作系统-文件系统总结 | 韬光养晦 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +262,7 @@
             
             
               
-                java泛型的一些理解与笔记
+                操作系统-文件系统总结
               
             
           </h1>
@@ -253,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-24T18:15:09+08:00" content="2016-03-24">
-              2016-03-24
+            <time itemprop="dateCreated" datetime="2016-12-29T00:16:07+08:00" content="2016-12-29">
+              2016-12-29
             </time>
           </span>
 
@@ -267,8 +288,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
                   </a>
                 </span>
 
@@ -283,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/24/20160324-01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/20160324-01/" itemprop="commentsCount"></span>
+                <a href="/2016/12/29/20161229-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/29/20161229-01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,9 +327,23 @@
       
 
       
-        <p>都知道ArrayList是基于List接口实现的，HashMap是基于Map接口实现的。我们在编程的时候都尽量用List和Map来定义变量，这样就实现了面相接口编程，修改的时候也更加灵活。</p>
-<p>现在来说说HashMap，它是map类的实现，当它接受一个key-value键值对的时候，它会把key对象做hashcode处理，hashCode()是每个Object都具备的方法，hashcode计算出来后用与作存储位置，而对应的value存在那个地方即可。这就是hashMap的简单原理。</p>
-<p>在HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。 当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键，而应该用containsKey()方法来判断。而在Hashtable中，无论是key还是value都不能为null 。</p>
+        <h3 id="文件存取"><a href="#文件存取" class="headerlink" title="文件存取"></a>文件存取</h3><p>文件的存取方式是由文件的性质和用户使用文件的情况决定。</p>
+<h4 id="顺序存取"><a href="#顺序存取" class="headerlink" title="顺序存取"></a>顺序存取</h4><p>进程在这些系统中可以从头顺序读取文件全部字节或记录</p>
+<h4 id="随机存取"><a href="#随机存取" class="headerlink" title="随机存取"></a>随机存取</h4><p>不按照顺序，而是按照关键字来存取记录</p>
+<p><strong>磁带是顺序存取。磁盘是随机存取。</strong></p>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><h4 id="文件的逻辑结构"><a href="#文件的逻辑结构" class="headerlink" title="文件的逻辑结构"></a>文件的逻辑结构</h4><p>这是从用户观点出发所观察到的文件组织形式，是用户可以直接处理的数据及其结构，独立于文件的物理特性，又称为文件组织。</p>
+<p>文件的逻辑结构有<strong>流式文件</strong>和<strong>记录式文件</strong> </p>
+<ul>
+<li><em>流式文件</em>指文件内的数据不再组成记录，只是依次的一串信息集合，也可以看成是无结构的或只有一个记录的记录式文件。</li>
+<li><em>流式文件</em>指文件内的数据不再组成记录，只是依次的一串信息集合，也可以看成是无结构的或只有一个记录 的记录式文件。记录式文件往往由高级语言或数据库管理系统提供。 </li>
+</ul>
+<h4 id="文件的物理结构"><a href="#文件的物理结构" class="headerlink" title="文件的物理结构"></a>文件的物理结构</h4><p>又称为文件的存储结构，是指文件在外存上的存储组织形式，不仅与存储介质有关，还与外存分配方式有关。用户看到的是逻辑文件，处理的是逻辑记录</p>
+<h5 id="顺序文件"><a href="#顺序文件" class="headerlink" title="顺序文件"></a>顺序文件</h5><p>将一个文件中逻辑上连续的信息存放到存储介质的依次相邻的块中便形成顺序结构， 这类文件叫顺序文件，又称连续文件。显然，这是一种逻辑记录顺序和物理记录顺序完全一致的文件，通常，记录按出现的次序被读出或修改。 <em>如果要更新文件，必须复制整个文件，更新，然后在放到另外一块顺序存储器上</em>。</p>
+<h5 id="连接文件"><a href="#连接文件" class="headerlink" title="连接文件"></a>连接文件</h5><p>连接结构的特点是使用连接字，又叫指针来表示文件中各个记录之间的关系<br><img src="link_file.png" alt=""><br>文件信息存放在外存的若干个物理块中，第一块文件信息的物理地址由文件目录 给出，而每一块的连接字指出了文件的下一个物理块位置。</p>
+<h5 id="直接文件"><a href="#直接文件" class="headerlink" title="直接文件"></a>直接文件</h5><p>使用连接文件很容易把数据记录组织起来，但是查找某个记录需遍历链接结构，使得效率很低。另外一种技术，称为<strong>散列法</strong>或杂凑法（!”#! 法）可以提高效率<br>在直接存取存储设 备上，利用 !”#! 法把记录的关键字与其地址之间建立某种对应关系，以便实现快速存取的 文件叫直接文件或散列文件。</p>
+<h5 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h5><p>索引结构是实现非连续存储的另一种方法，适用于数据记录保存在随机存取存储设备 上的文件。<br><img src="02.png" alt=""></p>
+<p>一层一层索引</p>
+<p> 如图所示，系统为每个文件建立了一张索引表，其中，每个表目包含一个记 录的键（或逻辑记录号）及其记录数据的存储地址，存储地址可以是记录的物理地址，也可是 记录的符号地址，这种类型的文件称索引文件。通常，索引表的地址可由文件目录指出，查 阅索引表先找到的是相应记录键（或逻辑记录号），然后，获得数据存储地址。</p>
 
       
     </div>
@@ -323,7 +358,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/操作系统/" rel="tag">#操作系统</a>
           
         </div>
       
@@ -332,17 +367,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/23/20160323-01/" rel="next" title="Android studio解决gradle下载慢的问题">
-                <i class="fa fa-chevron-left"></i> Android studio解决gradle下载慢的问题
+              <a href="/2016/12/17/20161217-01/" rel="next" title="前端应试基础知识总结">
+                <i class="fa fa-chevron-left"></i> 前端应试基础知识总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/20160324-02/" rel="prev" title="java里的可达性和各种引用">
-                java里的可达性和各种引用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +399,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/24/20160324-01/"
-           data-title="java泛型的一些理解与笔记" data-url="http://yoursite.com/2016/03/24/20160324-01/">
+      <div class="ds-thread" data-thread-key="2016/12/29/20161229-01/"
+           data-title="操作系统-文件系统总结" data-url="http://yoursite.com/2016/12/29/20161229-01/">
       </div>
     
   </div>
@@ -483,7 +514,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件存取"><span class="nav-number">1.</span> <span class="nav-text">文件存取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序存取"><span class="nav-number">1.1.</span> <span class="nav-text">顺序存取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机存取"><span class="nav-number">1.2.</span> <span class="nav-text">随机存取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件结构"><span class="nav-number">2.</span> <span class="nav-text">文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的逻辑结构"><span class="nav-number">2.1.</span> <span class="nav-text">文件的逻辑结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的物理结构"><span class="nav-number">2.2.</span> <span class="nav-text">文件的物理结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顺序文件"><span class="nav-number">2.2.1.</span> <span class="nav-text">顺序文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接文件"><span class="nav-number">2.2.2.</span> <span class="nav-text">连接文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#直接文件"><span class="nav-number">2.2.3.</span> <span class="nav-text">直接文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引文件"><span class="nav-number">2.2.4.</span> <span class="nav-text">索引文件</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
